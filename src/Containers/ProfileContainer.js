@@ -12,22 +12,21 @@ import UserAdventureList from '../Components/ProfileComponents/UserAdventureList
 const ProfileContainer = (props) => {
 
     const loadUserAdventures = () => {
-        return props.user.user_adventures.map(adventure => {
+        return props.user_adventures.map(adventure => {
             return <UserAdventureList adventures={adventure}/>
         })
     }
 
-
-    console.log(props.user.user_adventures);
     return(
         <div>
+          <h3>{props.full_name}</h3>
           {loadUserAdventures()}
         </div>
     )
 
 }
 
-const mapStateToProps  = (state) => {
-    return state
+const mapStateToProps  = ({user}) => {
+    return user
 }
 export default connect(mapStateToProps, null)(ProfileContainer)

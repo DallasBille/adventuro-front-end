@@ -1,16 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import AdventureCard from '../Components/DonateComponents/AdventureCard'
-import { loadAdventuresAction } from '../Redux/actions/adventureActions'
-
+import { fetchAdventures } from "../Adapters/adventureAdapters"
 class DonateContainer extends React.Component {
 
     componentDidMount(){
-        fetch(`http://localhost:3000/api/v1/adventures`)
-        .then(res => res.json())
-        .then(adventures => {
-        this.props.setStateAdventures(adventures)
-        })
+        this.props.fetchAdventures()
     }
 
      createAdventureCards = () => {
@@ -22,20 +17,20 @@ class DonateContainer extends React.Component {
     render(){
         return(
             <div>
-                {this.createAdventureCards()}
+            {this.createAdventureCards()}
             </div>
             )
 
     }
 }
 
-const mapStateToProps = (state) => {
-    return state
+const mapStateToProps = ({adventures}) => {
+    return adventures
 }
-const mapDispatchToProps = (dispatch) => {
-    return {
-    setStateAdventures: (adventures)=>{dispatch({type: "LOAD_ADVENTURES", payload: adventures})}
-    }
-}
+// const mapDispatchToProps = (dispatch) => {
+//     return {
+//     setStateAdventures: (adventures)=>{dispatch({type: "LOAD_ADVENTURES", payload: adventures})}
+//     }
+// }
 
-export default connect(mapStateToProps, mapDispatchToProps)(DonateContainer)
+export default connect(mapStateToProps, {fetchAdventures})(DonateContainer)

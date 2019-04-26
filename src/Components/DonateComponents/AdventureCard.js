@@ -40,7 +40,7 @@ const AdventureCard = (props) => {
     </CardActionArea>
     <CardActions>
       <Button size="small" color="primary">
-        Share
+        Donate
       </Button>
       <Button size="small" color="primary">
         Learn More

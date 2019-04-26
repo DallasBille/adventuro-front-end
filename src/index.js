@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { createStore, applyMiddleware } from 'redux'
-import reducer from './Redux/reducers/reducer'
+import { createStore, applyMiddleware, combineReducers, compose } from 'redux'
+// import reducer from './Redux/reducers/reducer'
 import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
+import userReducer from './Redux/reducers/userReducer'
+import adventureReducer from './Redux/reducers/adventureReducer'
 
-const store = createStore(reducer, applyMiddleware(thunk))
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const rootReducer = combineReducers({user: userReducer, adventures: adventureReducer})
+const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
     <Provider store={store}>
