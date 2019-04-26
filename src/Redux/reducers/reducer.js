@@ -1,21 +1,29 @@
 const initialState = {
-    user: {}
+    user: {},
+    adventures: []
 }
 
-const userReducer = (state = initialState, action) => {
+const reducer = (state = initialState, action) => {
     switch(action.type){
         case "CREATE_USER":
         return {...state, user: action.payload}
-        // this.props.history.push("/home")
+
         case "LOAD_USER":
         return {...state, user: action.payload}
+
         case "LOGOUT_USER":
         localStorage.clear()
-        console.log("reducer",state, action);
         return {...state, user: {} }
+
+        case "LOGIN_USER":
+        return {...state, user: action.payload}
+
+        case "LOAD_ADVENTURES":
+        return {...state, adventures: action.payload}
+
         default:
         return state
     }
 }
 
-export default userReducer;
+export default reducer;

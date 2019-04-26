@@ -1,14 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import SignUp from './Components/SignUp'
+// import SignUp from './Components/SignUp'
 import Nav from './Components/Nav'
 import Footer from './Components/Footer'
 import RouterComp from './Components/RouterComp'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { connect } from 'react-redux'
 import { signUpNewUser } from './Adapters/userAdapters'
-
+import Landing from './Components/Landing'
 
 class App extends React.Component {
 
@@ -21,25 +21,30 @@ class App extends React.Component {
             .then(user => {
                 return this.props.loadUser(user.user)
             })
-        } 
+        }
     }
+
 
 
 
     render(){
-        console.log(this.props.user)
+        console.log(this.props.user);
+        const notLoggedIn = (Object.keys(this.props.user).length == 0)
       return (
         <div className="App">
-        <Router>
-        <h1>App</h1>
-          <Nav/>
-          <RouterComp/>
-          <Footer/>
-         </Router>
+            {notLoggedIn ? <Landing/> :
+            <Router>
+            <h3>App</h3>
+              <Nav/>
+              <RouterComp/>
+              <Footer/>
+            </Router>}
         </div>
       );
     }
 }
+
+
 
 const mapStateToProps = (state) => {
     return state

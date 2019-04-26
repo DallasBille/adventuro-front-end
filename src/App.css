@@ -31,3 +31,39 @@
     transform: rotate(360deg);
   }
 }
+
+.adventure-card {
+    margin: 10px auto;
+    width: 400px;
+
+}
+
+.home-image {
+    width: 95%;
+}
+
+footer {
+border-top: 3px solid #ccc;
+  background-color: #999;
+  color: #fff;
+  height: 100px;
+}
+
+.link {
+    text-decoration: white;
+    color: white;
+}
+
+.left {
+    float: left;
+}
+
+.logout {
+    float: right;
+    text-decoration: white;
+    color: white;
+}
+
+#random {
+    width: 100vw;
+}

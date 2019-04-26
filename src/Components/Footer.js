@@ -5,7 +5,11 @@ export default class Footer extends Component {
 
     render(){
         return(
-            <h1>Fooooter</h1>
+            <div>
+            <footer>
+             <h1>Fuckin' Fooooter bro</h1>
+            </footer>
+            </div>
         )
     }
 
