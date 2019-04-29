@@ -8,9 +8,10 @@ import {Provider} from 'react-redux'
 import thunk from 'redux-thunk'
 import userReducer from './Redux/reducers/userReducer'
 import adventureReducer from './Redux/reducers/adventureReducer'
+import donationReducer from './Redux/reducers/donationReducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const rootReducer = combineReducers({user: userReducer, adventures: adventureReducer})
+const rootReducer = combineReducers({user: userReducer, adventures: adventureReducer, donations: donationReducer})
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(
