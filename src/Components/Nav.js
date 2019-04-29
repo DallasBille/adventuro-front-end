@@ -8,14 +8,10 @@ import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button';
 
 class Nav extends Component {
-    // <Button className="left">
-    // <Link className="link left">Start Adventure</Link>
-    // </Button>
 
 
 
     render(){
-        console.log(this.props);
         return(
         <div>
         {!!this.props.token ?
@@ -30,6 +26,9 @@ class Nav extends Component {
             </Button >
             <Button className="left">
             <Link className="link left" to="/profile">Profile</Link>
+            </Button>
+            <Button className="left">
+            <Link className="link left" to="/create">Create</Link>
             </Button>
             <Button className="logout">
             <Link  class="link" onClick={this.props.logOut}>LogOut</Link>
@@ -51,7 +50,7 @@ class Nav extends Component {
                 </Button>
               </Typography>
             </Toolbar>
-        </AppBar> } 
+        </AppBar> }
         </div>
         )
     }

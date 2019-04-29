@@ -26,8 +26,7 @@ class SignUp extends Component {
             this.props.signUpNewUser(userObj)
             return <Redirect to="/profile"/>
         }
-        // console.log(this.state);
-
+        
     render(){
         return(
             <>

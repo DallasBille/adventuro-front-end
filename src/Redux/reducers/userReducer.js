@@ -6,7 +6,9 @@ const initialState = {
     last_name: "",
     full_name: "",
     token: "",
-    user_adventures: []
+    user_adventures: [],
+    donation_adventures: [],
+    user_donations: []
 }
 
 const userReducer = (state = initialState, action) => {
@@ -20,7 +22,9 @@ const userReducer = (state = initialState, action) => {
             first_name: userObj.first_name,
             last_name: userObj.last_name,
             full_name: userObj.full_name,
-            user_adventures: userObj.user_adventures
+            user_adventures: userObj.user_adventures,
+            donation_adventures: userObj.donation_adventures,
+            user_donations: userObj.user_donations
         }
 
         case "LOAD_USER":
@@ -32,7 +36,10 @@ const userReducer = (state = initialState, action) => {
             first_name: userObj.first_name,
             last_name: userObj.last_name,
             full_name: userObj.full_name,
-            user_adventures: userObj.user_adventures
+            user_adventures: userObj.user_adventures,
+            donation_adventures: userObj.donation_adventures,
+            user_donations: userObj.user_donations
+
         }
 
         case "LOGOUT_USER":
@@ -45,10 +52,12 @@ const userReducer = (state = initialState, action) => {
         last_name: "",
         full_name: "",
         token: "",
-        user_adventures: []}
+        user_adventures: [],
+        donation_adventures: [],
+        user_donations: []
+    }
 
         case "LOGIN_USER":
-        debugger
         return {...state,
             id: userObj.id,
             username: userObj.username,
@@ -56,7 +65,10 @@ const userReducer = (state = initialState, action) => {
             first_name: userObj.first_name,
             last_name: userObj.last_name,
             full_name: userObj.full_name,
-            user_adventures: userObj.user_adventures
+            user_adventures: userObj.user_adventures,
+            donation_adventures: userObj.donation_adventures,
+            user_donations: userObj.user_donations
+
         }
         case "SET_TOKEN":
       return {

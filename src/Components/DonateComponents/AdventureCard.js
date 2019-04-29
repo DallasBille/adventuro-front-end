@@ -8,6 +8,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
 
 const AdventureCard = (props) => {
 
@@ -20,7 +21,10 @@ const AdventureCard = (props) => {
       },
     };
 
+
+    console.log(props.adventure.sum_amount);
     return(
+    <Link to={`/${props.adventure.id}`}>
     <div>
     <Card className="adventure-card">
     <CardActionArea>
@@ -32,6 +36,9 @@ const AdventureCard = (props) => {
       <CardContent>
         <Typography gutterBottom variant="h5" component="h2">
           {props.adventure.title}
+        </Typography>
+        <Typography component="p">
+          Mode: {props.adventure.mode}
         </Typography>
         <Typography component="p">
          {props.adventure.mission}
@@ -48,9 +55,13 @@ const AdventureCard = (props) => {
       <Typography component="p">
         Cost ${props.adventure.cost}
       </Typography>
+      <Typography component="p">
+        ${props.adventure.sum_amount}
+      </Typography>
     </CardActions>
   </Card>
     </div>
+</Link>
     )
 }
 

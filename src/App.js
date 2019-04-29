@@ -1,13 +1,12 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-// import SignUp from './Components/SignUp'
 import Nav from './Components/Nav'
 import Footer from './Components/Footer'
 import RouterComp from './Components/RouterComp'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { connect } from 'react-redux'
-// import { loadUser } from './Adapters/userAdapters'
+
 
 
 class App extends React.Component {
@@ -19,18 +18,12 @@ class App extends React.Component {
             fetch(`http://localhost:3000/api/v1/current_user`,{ headers: { Authorization: `Bearer ${token}` } })
             .then(res => res.json())
             .then(user => {
-                console.log(token);
                  this.props.loadUser(user.user)
                   this.props.setToken(token)
             })
         }
     }
 
-
-
-
-    // {notLoggedIn ? <Landing/> :
-    // const notLoggedIn = (Object.keys(this.props.email).length == 0)
     render(){
       return (
         <div className="App">
@@ -44,8 +37,6 @@ class App extends React.Component {
       );
     }
 }
-
-
 
 const mapStateToProps = ({user}) => {
     return user

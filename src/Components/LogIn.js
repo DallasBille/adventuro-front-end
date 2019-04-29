@@ -19,12 +19,14 @@ class LogIn extends React.Component {
          event.preventDefault()
          let userObj = this.state
          this.props.logInUser(userObj)
-         // return <Redirect to="/profile"/>
      }
 
   render(){
     return(
         <div>
+            {!!this.props.token ?
+            <Redirect to="/profile"/> :
+            <div>
             <h1>LogIn</h1>
             <form onSubmit={this.handleSubmit}>
             <input onChange={this.handleChange} type="text" name="username" placeholder="username" value={this.state.username}/>
@@ -33,6 +35,8 @@ class LogIn extends React.Component {
             <br/>
             <input type="submit"/>
             </form>
+        </div>
+        }
         </div>
     )
   }
@@ -46,5 +50,7 @@ class LogIn extends React.Component {
     //         dispatch(logInUser(obj))}
     //     }
     // }
-
-export default connect(null, {logInUser})(LogIn)
+const mapStateToProps = ({user}) => {
+    return user
+}
+export default connect(mapStateToProps, {logInUser})(LogIn)

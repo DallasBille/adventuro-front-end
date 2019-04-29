@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import AdventureCard from '../Components/DonateComponents/AdventureCard'
 import { fetchAdventures } from "../Adapters/adventureAdapters"
+
 class DonateContainer extends React.Component {
 
     componentDidMount(){
@@ -27,10 +28,5 @@ class DonateContainer extends React.Component {
 const mapStateToProps = ({adventures}) => {
     return adventures
 }
-// const mapDispatchToProps = (dispatch) => {
-//     return {
-//     setStateAdventures: (adventures)=>{dispatch({type: "LOAD_ADVENTURES", payload: adventures})}
-//     }
-// }
 
 export default connect(mapStateToProps, {fetchAdventures})(DonateContainer)
