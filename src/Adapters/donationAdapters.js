@@ -11,9 +11,10 @@ export const createDonation = (donation) => {
             body: JSON.stringify(donation)
         })
         .then(res => res.json())
-        .then(donation => {
-            console.log(donation)
-            dispatch(createDonationAction(donation))
+        .then(newDonationObj => {
+            console.log(newDonationObj)
+            debugger
+            dispatch(createDonationAction(newDonationObj))
     })
     }
 }

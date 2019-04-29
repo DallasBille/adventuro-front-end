@@ -7,6 +7,9 @@ const Home = (props) => {
         <div>
             <h1>Home Page</h1>
             <p>Hello, {props.user.first_name}!</p>
+            <div className="home-divider">
+            
+            </div>
         </div>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import ProgressBar from './ProgressBar'
 import DonateDialog from './DonateDialog'
+import AdventureDivider from './AdventureDivider'
 // import Button from '@material-ui/core/Button';
 // import TextField from '@material-ui/core/TextField';
 // import Dialog from '@material-ui/core/Dialog';
@@ -32,13 +33,15 @@ class AdventureShow extends React.Component {
     render(){
     return (
         <div className="adventure-show">
-        <h3>{this.state.adventure.title}</h3>
-        <p>{this.state.adventure.mission}</p>
-        <p>${this.state.adventure.sum_amount}/${this.state.adventure.cost} Donated</p>
-        <ProgressBar percentage={(this.state.adventure.sum_amount/this.state.adventure.cost) * 100}/>
-        <br/>
-        <br/>
-        <DonateDialog adventureId={this.state.adventure.id}/>
+            <AdventureDivider/>
+            <img className="adventure-show-image"src={this.state.adventure.image}/>
+            <h3>{this.state.adventure.title}</h3>
+            <p>{this.state.adventure.mission}</p>
+            <h4>${this.state.adventure.sum_amount} Donated of</h4><p>${this.state.adventure.cost}</p>
+            <ProgressBar percentage={(this.state.adventure.sum_amount/this.state.adventure.cost) * 100}/>
+            <br/>
+            <br/>
+            <DonateDialog adventureId={this.state.adventure.id}/>
         </div>
      )
     }

@@ -3,7 +3,6 @@ import Filler from './Filler'
 
 const ProgressBar = (props) => {
 
-    console.log(props);
 
     return(
         <div className="progress-bar">

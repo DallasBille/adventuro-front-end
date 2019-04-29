@@ -1,5 +1,5 @@
 import React from 'react';
-// import { createDonation } from '.../Adapters/donationAdapters'
+import { createDonation } from '../../Adapters/donationAdapters'
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Dialog from '@material-ui/core/Dialog';
@@ -33,19 +33,21 @@ import { connect } from 'react-redux'
       this.setState({
           donation: {[event.target.name]: event.target.value,
                     user_id: this.props.id,
-                    advenuture_id: this.props.adventureId}
+                    adventure_id: this.props.adventureId}
       })
   }
 
   handleSubmit = () => {
      let donation = this.state.donation
-      // createDonation(donation)
+     console.log(donation);
+     debugger
+     this.props.createDonation(donation)
+     this.handleClose()
   }
 
 
 
   render() {
-      // console.log(createDonation);
     return (
       <div>
         <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
@@ -77,7 +79,7 @@ import { connect } from 'react-redux'
             <Button onClick={this.handleClose} color="primary">
             Cancel
             </Button>
-            <Button onClick={this.handleSubmit} onClick={this.handleClose} color="primary">
+            <Button  onClick={this.handleSubmit} color="primary">
               Donate
             </Button>
           </DialogActions>
@@ -90,4 +92,4 @@ import { connect } from 'react-redux'
 const mapStateToProps = ({user}) => {
     return user
 }
-export default connect(mapStateToProps,null)(DonateDialog)
+export default connect(mapStateToProps,{ createDonation })(DonateDialog)

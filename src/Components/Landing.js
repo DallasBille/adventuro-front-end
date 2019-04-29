@@ -8,7 +8,6 @@ const Landing = (props) => {
 
     return(
         <>
-            <h1>Landing</h1>
             <LogIn/>
             <SignUp/>
         </>

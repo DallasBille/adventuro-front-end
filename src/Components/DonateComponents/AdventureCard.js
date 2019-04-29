@@ -21,8 +21,6 @@ const AdventureCard = (props) => {
       },
     };
 
-
-    console.log(props.adventure.sum_amount);
     return(
     <Link to={`/${props.adventure.id}`}>
     <div>
@@ -34,7 +32,8 @@ const AdventureCard = (props) => {
         title="Contemplative Reptile"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="h2">
+       <img className="adventure-images" src={props.adventure.image}/>
+        <Typography gutterBottom variant="h6" component="h2">
           {props.adventure.title}
         </Typography>
         <Typography component="p">

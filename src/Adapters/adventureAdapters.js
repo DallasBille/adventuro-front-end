@@ -34,7 +34,6 @@ export const createAdventure = (adventure) => {
         })
         .then(res => res.json())
         .then(adventure => {
-            console.log(adventure)
             dispatch(createAdventureAction(adventure))
     })
     }
