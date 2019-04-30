@@ -10,12 +10,11 @@ import Button from '@material-ui/core/Button';
 class Nav extends Component {
 
 
-
     render(){
         return(
         <div>
         {!!this.props.token ?
-            <AppBar position="fixed">
+            <AppBar  position="fixed">
             <Toolbar >
             <Typography id="random">
             <Button className="left">

@@ -20,6 +20,7 @@ class AdventureShow extends React.Component {
         adventure: '',
         percentage: 0
     }
+
     componentDidMount(){
         fetch(`http://localhost:3000/api/v1/adventures/${this.props.match.params.id}`)
         .then(res => res.json())
@@ -31,6 +32,7 @@ class AdventureShow extends React.Component {
     }
 
     render(){
+
     return (
         <div className="adventure-show">
             <AdventureDivider/>
@@ -41,6 +43,7 @@ class AdventureShow extends React.Component {
             <ProgressBar percentage={(this.state.adventure.sum_amount/this.state.adventure.cost) * 100}/>
             <br/>
             <br/>
+            <p>{this.state.adventure.donations_number} donated</p>
             <DonateDialog adventureId={this.state.adventure.id}/>
         </div>
      )

@@ -21,26 +21,27 @@ const AdventureCard = (props) => {
       },
     };
 
+    const shortenedMission = () => {
+        const short =  props.adventure.mission.substring(0, 75)
+        return short + "..."
+
+    }
+
     return(
     <Link to={`/${props.adventure.id}`}>
     <div>
     <Card className="adventure-card">
     <CardActionArea>
-      <CardMedia
-        className={styles.media}
-        image="/static/images/cards/contemplative-reptile.jpg"
-        title="Contemplative Reptile"
-      />
       <CardContent>
        <img className="adventure-images" src={props.adventure.image}/>
-        <Typography gutterBottom variant="h6" component="h2">
+        <Typography gutterBottom variant="h8" component="h3">
           {props.adventure.title}
         </Typography>
-        <Typography component="p">
+        <Typography gutterBottom variant="h8" component="h3">
           Mode: {props.adventure.mode}
         </Typography>
         <Typography component="p">
-         {props.adventure.mission}
+         {shortenedMission()}
         </Typography>
       </CardContent>
     </CardActionArea>
@@ -49,13 +50,13 @@ const AdventureCard = (props) => {
         Donate
       </Button>
       <Button size="small" color="primary">
-        Learn More
+        More
       </Button>
-      <Typography component="p">
+      <Typography gutterBottom variant="h12" component="h6">
         Cost ${props.adventure.cost}
       </Typography>
-      <Typography component="p">
-        ${props.adventure.sum_amount}
+      <Typography gutterBottom variant="h12" component="h6">
+        Donated ${props.adventure.sum_amount}
       </Typography>
     </CardActions>
   </Card>

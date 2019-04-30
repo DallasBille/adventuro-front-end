@@ -39,8 +39,6 @@ import { connect } from 'react-redux'
 
   handleSubmit = () => {
      let donation = this.state.donation
-     console.log(donation);
-     debugger
      this.props.createDonation(donation)
      this.handleClose()
   }

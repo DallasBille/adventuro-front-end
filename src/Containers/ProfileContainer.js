@@ -29,8 +29,8 @@ const ProfileContainer = (props) => {
         <div>
             <h3> My Donations</h3>
           <h3>{props.full_name}</h3>
-          {loadUserDonations()}
           {loadUserAdventures()}
+          {loadUserDonations()}
         </div>
     )
 

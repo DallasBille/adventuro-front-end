@@ -33,13 +33,16 @@
 }
 
 .adventure-card {
+
     margin: 20px;
-    padding: 15px auto;
+    padding-left: 15px auto;
     width: 250px;
     height: 350px;
     border: 1px solid #ccc;
 }
-
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
 .donate-container a:link, .donate-container a:visited, .donate-container a:active {
   color: #000;
   text-decoration: none;
@@ -77,7 +80,8 @@ footer {
 }
 /* =========adventure show */
 .adventure-show {
-    margin: 100px
+    margin: 100px;
+
 }
 
 /* =============Progress Bar */
@@ -99,6 +103,11 @@ footer {
 }
 /* ==========PROFILE */
 
+.profile-container {
+    margin: auto;
+    padding-top: 25px;
+}
+
 .donate-container {
   display: flex;
   flex-wrap: wrap;
@@ -107,10 +116,11 @@ footer {
   border-bottom: 0px;
 }
 
-.user-adventure-list{
+.user-adventure-card {
+    margin: 20px;
     float: right;
     width: 60vw;
-    border-style: solid;
+    border: 1px solid #ccc;
 }
 
 .clear {
@@ -122,17 +132,19 @@ footer {
     width: 35vw;
 }
 
+
+/*  =========== adventure css*/
 .adventure-images {
-    width: 250px;
-    height: 188px;
-    margin: auto;
+    padding-top: -50px;
+    width: 220px;
+    height: 165px;
     padding-right: 100px;
 }
 
 .adventure-show-divider {
     margin-top: -50px;
-    width: 100%;
-    height: 150px;
+    width: 100vw;
+    height: 100px;
     background-color: #dfdfdf;
 }
 
@@ -140,4 +152,27 @@ footer {
     padding-top: 20px;
     width: 550px;
     height: 413px;
+}
+
+.create-container {
+    margin: auto;
+    width: 600px;
+}
+
+.adventure-select {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.adventure-select select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
 }

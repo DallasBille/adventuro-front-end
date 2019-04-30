@@ -2,15 +2,18 @@ import React from 'react'
 import { createAdventure } from '../Adapters/adventureAdapters'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
 
  class CreateAdventure extends React.Component {
+
 
      state = {
          title: '',
          mode: 'Other',
          mission: '',
          title: '',
-         cost: 0,
+         cost: null,
          user_id: null
      }
 
@@ -27,36 +30,73 @@ import { Redirect } from 'react-router-dom'
          this.props.createAdventure(adventure)
          return this.props.history.push('/profile')
      }
+     // <input onChange={this.handleCreate} value={this.state.title} name="title" type="text"/>
+
+
     render(){
+        console.log(this.state);
      return(
-         <div>
-         <h3>Create Adventure</h3>
-         <form onSubmit={this.handleSubmit}>
-         <select value={this.state.mode} onChange={this.handleCreate} name="mode">
-         <option>Bicycle</option>
-         <option>Car</option>
-         <option>Motorcycle</option>
-         <option>Foot</option>
-         <option>Plane</option>
-         <option>Moped</option>
-         <option>Boat</option>
-         <option>Other</option>
-         </select>
-         <p>Title</p>
-         <input onChange={this.handleCreate} value={this.state.title} name="title" type="text"/>
-         <p>Mission</p>
-         <input onChange={this.handleCreate} value={this.state.mission} name="mission" type="text"/>
-         <p>Cost</p>
-         <input onChange={this.handleCreate} value={this.state.cost} name="cost" type="text"/>
-         <p>Description</p>
-         <textarea onChange={this.handleCreate} value={this.state.description} rows="4" cols="50" name="description" type="text"/>
+         <div className="create-container">
          <br/>
-         <input type="submit"/>
+         <h3>Create Adventure</h3>
+           <form>
+                 <TextField
+                 onChange={this.handleCreate}
+                 value={this.state.title}
+                 name="title"
+                 id="standard-full-width"
+                 label="Adventure Title"
+                 style={{ margin: 8 }}
+                 placeholder="Title"
+                 fullWidth
+                 margin="normal"
+                 InputLabelProps={{
+                   shrink: true,
+                 }}
+               />
+                 <TextField multiline={true} rows={2} rowsMax={4} onChange={this.handleCreate} value={this.state.mission}
+                 name="mission" id="standard-full-width" label="Tell Us About Your Adventure" style={{ margin: 8 }}
+                 placeholder="Mission" fullWidth margin="normal"
+                 InputLabelProps={{
+                   shrink: true,
+                 }}
+               />
+                 <TextField
+                 onChange={this.handleCreate}
+                 value={this.state.cost}
+                 name="cost"
+                 id="standard-full-width"
+                 label="Goal"
+                 style={{ width: 100}}
+                 placeholder="Cost"
+                 margin="normal"
+                 InputLabelProps={{
+                   shrink: true,
+               }}/>
+               <br/>
+               <br/>
+               <div>
+               <label>Mode</label>
+               <br/>
+               <select className="adventure-select" value={this.state.mode} onChange={this.handleCreate} name="mode">
+                   <option>Bicycle</option>
+                   <option>Car</option>
+                   <option>Motorcycle</option>
+                   <option>Foot</option>
+                   <option>Plane</option>
+                   <option>Moped</option>
+                   <option>Boat</option>
+                   <option>Other</option>
+               </select>
+         </div>
+        <br/>
+         <Button onClick={this.handleSubmit}>Create</Button>
          </form>
          </div>
      )
      }
  }
+ // <input onChange={this.handleCreate} value={this.state.cost} name="cost" type="text"/>
  const mapStateToProps = ({user}) => {
      return user
  }
