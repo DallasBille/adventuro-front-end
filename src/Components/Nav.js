@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom'
+import { Redirect, Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { logOutUserAction } from '../Redux/actions/userActions'
 import AppBar from '@material-ui/core/AppBar';
@@ -9,6 +9,11 @@ import Button from '@material-ui/core/Button';
 
 class Nav extends Component {
 
+
+    logOutRedirect = () => {
+        this.props.logOut()
+        return <Redirect path="/home"/>
+    }
 
     render(){
         return(
@@ -30,7 +35,7 @@ class Nav extends Component {
             <Link className="link left" to="/create">Create</Link>
             </Button>
             <Button className="logout">
-            <Link  class="link" onClick={this.props.logOut}>LogOut</Link>
+            <Link  class="link" onClick={this.logOutRedirect}>LogOut</Link>
             </Button>
             </Typography>
             </Toolbar>

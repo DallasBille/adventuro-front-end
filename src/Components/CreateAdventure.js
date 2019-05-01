@@ -10,10 +10,9 @@ import Button from '@material-ui/core/Button';
 
      state = {
          title: '',
-         mode: 'Other',
          mission: '',
-         title: '',
          cost: null,
+         mode: 'Other',
          user_id: null
      }
 

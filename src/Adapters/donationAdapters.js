@@ -12,8 +12,6 @@ export const createDonation = (donation) => {
         })
         .then(res => res.json())
         .then(newDonationObj => {
-            console.log(newDonationObj)
-            debugger
             dispatch(createDonationAction(newDonationObj))
     })
     }

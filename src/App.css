@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -34,8 +35,8 @@
 
 .adventure-card {
 
-    margin: 20px;
-    padding-left: 15px auto;
+    margin: 10px;
+    padding: inherit;
     width: 250px;
     height: 350px;
     border: 1px solid #ccc;
@@ -76,12 +77,12 @@ footer {
 }
 
 #random {
-    width: 100vw;
+    width: 90vw;
 }
 /* =========adventure show */
 .adventure-show {
     margin: 100px;
-
+    padding-right: -100px;
 }
 
 /* =============Progress Bar */
@@ -111,7 +112,7 @@ footer {
 .donate-container {
   display: flex;
   flex-wrap: wrap;
-  width: 960px;
+  width: 100vw;
   margin: auto;
   border-bottom: 0px;
 }

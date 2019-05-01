@@ -8,7 +8,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux'
 import UserAdventureList from '../Components/ProfileComponents/UserAdventureList'
-import CreateAdventure from '../Components/CreateAdventure'
+
 
 
 const ProfileContainer = (props) => {

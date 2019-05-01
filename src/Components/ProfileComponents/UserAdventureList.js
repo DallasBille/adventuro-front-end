@@ -1,5 +1,4 @@
 import React from 'react'
-import NewAdventure from './NewAdventure'
 import Paper from '@material-ui/core/Paper';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -13,8 +12,8 @@ import IconButton from '@material-ui/core/IconButton';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import Collapse from '@material-ui/core/Collapse';
 import TextField from '@material-ui/core/TextField';
-
-
+import { connect } from 'react-redux'
+import { updateAdventure } from '../../Adapters/adventureAdapters'
 
 class UserAdventureList extends React.Component{
 
@@ -22,27 +21,31 @@ class UserAdventureList extends React.Component{
         expanded: false,
         editedAdventure: {
             title: this.props.adventures.title,
-            mode: this.props.adventures.mode,
             mission: this.props.adventures.mission,
-            title: this.props.adventures.title,
-            cost: this.props.adventures.cost,
+            cost: this.props.adventures.mission,
+            mode: this.props.adventures.mode,
         }
     }
 
     handleExpandClick = () => {
-        console.log("clicked");
    this.setState(state => ({ expanded: !state.expanded }));
  };
 
- // handleOnchange =() => {
- //     this.setState({
- //
- //     })
- // }
+ handleOnchange =(event) => {
 
-// className={classnames(classes.expand, {
-//     [classes.expandOpen]: this.state.expanded,
-// })}
+     this.setState({
+         editedAdventure: { ...this.state.editedAdventure, [event.target.name]: event.target.value}
+     })
+ }
+
+ handleSubmit = (event) => {
+     event.preventDefault()
+     let adventure = this.state.editedAdventure
+     debugger
+     this.props.updateAdventure(adventure, this.props.adventures.id)
+     this.handleExpandClick()
+ }
+
 render(){
     console.log(this.state);
     return(
@@ -79,9 +82,9 @@ render(){
             <Typography paragraph>Adventure</Typography>
             <form>
                   <TextField
-                  defaultValue={this.props.adventures.title}
-                  onChange={this.handleCreate}
-                  value={this.state.title}
+                  defaultValue={this.state.editedAdventure.title}
+                  onChange={this.handleOnchange}
+                  value={this.state.editedAdventure.title}
                   name="title"
                   id="standard-full-width"
                   label="Adventure Title"
@@ -93,32 +96,19 @@ render(){
                     shrink: true,
                   }}
                 />
-                  <TextField multiline={true} rows={2} rowsMax={4} onChange={this.handleCreate} defaultValue={this.props.adventures.mission} value={this.state.mission}
+                  <TextField multiline={true} rows={2} rowsMax={4} onChange={this.handleOnchange} defaultValue={this.state.editedAdventure.mission} value={this.state.editedAdventure.mission}
                   name="mission" id="standard-full-width" label="Tell Us About Your Adventure" style={{ margin: 8 }}
                   placeholder="Mission" fullWidth margin="normal"
                   InputLabelProps={{
                     shrink: true,
                   }}
                 />
-                  <TextField
-                  defaultValue={this.props.adventures.cost}
-                  onChange={this.handleCreate}
-                  value={this.state.cost}
-                  name="cost"
-                  id="standard-full-width"
-                  label="Goal"
-                  style={{ width: 100}}
-                  placeholder="Cost"
-                  margin="normal"
-                  InputLabelProps={{
-                    shrink: true,
-                }}/>
                 <br/>
                 <br/>
                 <div>
                 <label>Mode</label>
                 <br/>
-                <select className="adventure-select" defaultValue={this.props.adventures.mode} value={this.state.mode} onChange={this.handleCreate} name="mode">
+                <select className="adventure-select" defaultValue={this.state.editedAdventure.mode} value={this.state.editedAdventure.mode} onChange={this.handleOnchange} name="mode">
                     <option>Bicycle</option>
                     <option>Car</option>
                     <option>Motorcycle</option>
@@ -150,4 +140,4 @@ render(){
 // <button>Edit</button>
 // <button>Delete</button>
 // </div>
-export default UserAdventureList
+export default connect(null, {updateAdventure})(UserAdventureList)

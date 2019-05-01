@@ -56,6 +56,7 @@ const userReducer = (state = initialState, action) => {
         donation_adventures: [],
         user_donations: []
     }
+        
 
         case "LOGIN_USER":
         return {...state,
