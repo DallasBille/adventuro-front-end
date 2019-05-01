@@ -40,13 +40,11 @@ class UserAdventureList extends React.Component{
  handleSubmit = (event) => {
      event.preventDefault()
      let adventure = this.state.editedAdventure
-     debugger
      this.props.updateAdventure(adventure, this.props.adventures.id)
      this.handleExpandClick()
  }
 
 render(){
-    console.log(this.state);
     return(
         <div className="user-adventure-card">
         <Card>

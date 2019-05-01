@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
-import { Redirect, Link } from 'react-router-dom'
+import { Redirect, Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux'
+// import { withRouter } from 'react-router-dom'
 import { logOutUserAction } from '../Redux/actions/userActions'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar'
@@ -12,7 +13,7 @@ class Nav extends Component {
 
     logOutRedirect = () => {
         this.props.logOut()
-        return <Redirect path="/home"/>
+        this.props.history.push('/home')
     }
 
     render(){
@@ -68,4 +69,4 @@ const mapDispatchToProps = (dispatch) => {
 const mapStateToProps = ({user}) => {
     return user
 }
-export default connect(mapStateToProps, mapDispatchToProps)(Nav)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Nav))
