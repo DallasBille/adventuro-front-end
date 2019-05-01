@@ -22,7 +22,6 @@ class UserAdventureList extends React.Component{
         editedAdventure: {
             title: this.props.adventures.title,
             mission: this.props.adventures.mission,
-            cost: this.props.adventures.mission,
             mode: this.props.adventures.mode,
         }
     }
