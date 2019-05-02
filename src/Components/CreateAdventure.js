@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
+// import ActiveStorageProvider from 'react-activestorage-provider'
 
  class CreateAdventure extends React.Component {
 
@@ -89,6 +90,7 @@ import Button from '@material-ui/core/Button';
                </select>
          </div>
         <br/>
+                                    <br/>
          <Button onClick={this.handleSubmit}>Create</Button>
          </form>
          </div>
@@ -102,3 +104,47 @@ import Button from '@material-ui/core/Button';
 
 
  export default connect(mapStateToProps, {createAdventure})(CreateAdventure)
+
+
+
+ // <ActiveStorageProvider
+ // endpoint={{
+ //     path: `api/vi/adventure`,
+ //     model: 'Adventure',
+ //     attribute: 'image',
+ //     method: 'POST',
+ // }}
+ // onSubmit={user => this.setState({ avatar: user.avatar })}
+ // render={({ handleUpload, uploads, ready }) => (
+ //     <div>
+ //     <input
+ //     type="file"
+ //     disabled={!ready}
+ //     onChange={e => handleUpload(e.currentTarget.files)}
+ //     />
+ //
+ //     {uploads.map(upload => {
+ //         switch (upload.state) {
+ //             case 'waiting':
+ //             return <p key={upload.id}>Waiting to upload {upload.file.name}</p>
+ //             case 'uploading':
+ //             return (
+ //                 <p key={upload.id}>
+ //                 Uploading {upload.file.name}: {upload.progress}%
+ //                 </p>
+ //             )
+ //             case 'error':
+ //             return (
+ //                 <p key={upload.id}>
+ //                 Error uploading {upload.file.name}: {upload.error}
+ //                 </p>
+ //             )
+ //             case 'finished':
+ //             return (
+ //                 <p key={upload.id}>Finished uploading {upload.file.name}</p>
+ //             )
+ //         }
+ //     })}
+ //     </div>
+ // )}
+ // />

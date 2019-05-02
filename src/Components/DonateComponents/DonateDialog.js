@@ -22,7 +22,11 @@ import { connect } from 'react-redux'
   };
 
   handleClickOpen = () => {
-    this.setState({ open: true });
+    if(!!this.props.token){
+        this.setState({ open: true });
+    } else {
+        alert("You Must Be Logged In to Donate")
+    }
   };
 
   handleClose = () => {

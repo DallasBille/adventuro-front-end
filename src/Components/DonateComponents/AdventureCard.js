@@ -26,14 +26,14 @@ const AdventureCard = (props) => {
         return short + "..."
 
     }
-
+    console.log(props.adventure.imageURL);
     return(
     <Link to={`/${props.adventure.id}`}>
     <div>
     <Card className="adventure-card">
     <CardActionArea>
       <CardContent>
-       <img className="adventure-images" src={props.adventure.image}/>
+       <img className="adventure-images" src={`http://localhost:3000/${props.adventure.imageURL}`}/>
         <Typography gutterBottom variant="h8" component="h3">
           {props.adventure.title}
         </Typography>

@@ -25,6 +25,7 @@ class AdventureShow extends React.Component {
         fetch(`http://localhost:3000/api/v1/adventures/${this.props.match.params.id}`)
         .then(res => res.json())
         .then(adventure => {
+            debugger
             this.setState({
                 adventure: adventure
             })
@@ -32,11 +33,11 @@ class AdventureShow extends React.Component {
     }
 
     render(){
-
+        console.log(this.state);
     return (
         <div className="adventure-show">
             <AdventureDivider/>
-            <img className="adventure-show-image"src={this.state.adventure.image}/>
+            <img className="adventure-show-image"src={`http://localhost:3000/${this.state.adventure.imageURL}`}/>
             <h3>{this.state.adventure.title}</h3>
             <p>{this.state.adventure.mission}</p>
             <h4>${this.state.adventure.sum_amount} Donated of</h4><p>${this.state.adventure.cost}</p>
