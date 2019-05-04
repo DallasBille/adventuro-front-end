@@ -177,3 +177,13 @@ footer {
     background-image: none;
     -webkit-appearance: none;
 }
+
+/* #footer-id {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+} */
+
+.height {
+    min-height: 90vh;
+}

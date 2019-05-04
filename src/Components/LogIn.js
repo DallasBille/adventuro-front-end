@@ -17,11 +17,13 @@ class LogIn extends React.Component {
      }
      handleSubmit = (event) => {
          event.preventDefault()
+         console.log("clicked", this.state);
          let userObj = this.state
          this.props.logInUser(userObj)
      }
 
   render(){
+      // console.log(this.state);
     return(
         <div>
             {!!this.props.token ?

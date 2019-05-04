@@ -25,7 +25,6 @@ class AdventureShow extends React.Component {
         fetch(`http://localhost:3000/api/v1/adventures/${this.props.match.params.id}`)
         .then(res => res.json())
         .then(adventure => {
-            debugger
             this.setState({
                 adventure: adventure
             })

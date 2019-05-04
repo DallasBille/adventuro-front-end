@@ -20,9 +20,9 @@ class UserAdventureList extends React.Component{
     state = {
         expanded: false,
         editedAdventure: {
-            title: this.props.adventures.title,
-            mission: this.props.adventures.mission,
-            mode: this.props.adventures.mode,
+            title: this.props.myAdventure.title,
+            mission: this.props.myAdventure.mission,
+            mode: this.props.myAdventure.mode,
         }
     }
 
@@ -40,11 +40,12 @@ class UserAdventureList extends React.Component{
  handleSubmit = (event) => {
      event.preventDefault()
      let adventure = this.state.editedAdventure
-     this.props.updateAdventure(adventure, this.props.adventures.id)
+     this.props.updateAdventure(adventure, this.props.myAdventure.id)
      this.handleExpandClick()
  }
 
 render(){
+
     return(
         <div className="user-adventure-card">
         <Card>
@@ -57,21 +58,21 @@ render(){
       <Button>Edit Adventure</Button>
       </IconButton>
           <CardContent>
-           <img className="adventure-images" src={this.props.adventures.image}/>
+           <img className="adventure-images" src={`http://localhost:3000/${this.props.myAdventure.imageURL}`}/>
             <Typography gutterBottom variant="h8" component="h3">
-              {this.props.adventures.title}
+              {this.props.myAdventure.title}
             </Typography>
             <Typography gutterBottom variant="h8" component="h3">
-              Mode: {this.props.adventures.mode}
+              Mode: {this.props.myAdventure.mode}
             </Typography>
           </CardContent>
         </CardActionArea>
         <CardActions>
           <Typography gutterBottom variant="h12" component="h6">
-            Cost ${this.props.adventures.cost}
+            Cost ${this.props.myAdventure.cost}
           </Typography>
           <Typography gutterBottom variant="h12" component="h6">
-            Donated ${this.props.adventures.sum_amount}
+            Donated ${this.props.myAdventure.sum_amount}
           </Typography>
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
@@ -137,4 +138,8 @@ render(){
 // <button>Edit</button>
 // <button>Delete</button>
 // </div>
-export default connect(null, {updateAdventure})(UserAdventureList)
+
+const mapStateToProps = (state) => {
+    return state
+}
+export default connect(mapStateToProps, {updateAdventure})(UserAdventureList)

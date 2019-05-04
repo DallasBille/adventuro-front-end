@@ -19,43 +19,43 @@ class Nav extends Component {
     render(){
         return(
         <div>
-        {!!this.props.token ?
-            <AppBar  position="fixed">
-            <Toolbar >
-            <Typography id="random">
-            <Button className="left">
-            <Link className="link" to="/home">Home</Link>
-            </Button>
-            <Button className="left" >
-            <Link className="link left" to="/donate">Adventures</Link>
-            </Button >
-            <Button className="left">
-            <Link className="link left" to="/profile">Profile</Link>
-            </Button>
-            <Button className="left">
-            <Link className="link left" to="/create">Create</Link>
-            </Button>
-            <Button className="logout">
-            <Link  class="link" onClick={this.logOutRedirect}>LogOut</Link>
-            </Button>
-            </Typography>
-            </Toolbar>
-            </AppBar> :
-         <AppBar position="fixed">
-            <Toolbar >
-              <Typography id="random">
-                <Button className="left">
-                <Link className="link" to="/home">Home</Link>
-                </Button>
-                <Button className="left" >
-                <Link className="link left" to="/donate">Adventures</Link>
-                </Button >
-                <Button className="login">
-                <Link  class="link" to="/login">LogIn/SignUp</Link>
-                </Button>
-              </Typography>
-            </Toolbar>
-        </AppBar> }
+            {!!this.props.token ?
+                <AppBar  position="fixed">
+                  <Toolbar >
+                    <Typography id="random">
+                        <Button className="left">
+                        <Link className="link" to="/home">Home</Link>
+                        </Button>
+                        <Button className="left" >
+                        <Link className="link left" to="/donate">Adventures</Link>
+                        </Button >
+                        <Button className="left">
+                        <Link className="link left" to="/profile">Profile</Link>
+                        </Button>
+                        <Button className="left">
+                        <Link className="link left" to="/create">Create</Link>
+                        </Button>
+                        <Button className="logout">
+                        <Link  class="link" onClick={this.logOutRedirect}>LogOut</Link>
+                        </Button>
+                    </Typography>
+                  </Toolbar>
+                </AppBar> :
+                <AppBar position="fixed">
+                  <Toolbar >
+                    <Typography id="random">
+                        <Button className="left">
+                        <Link className="link" to="/home">Home</Link>
+                        </Button>
+                        <Button className="left" >
+                        <Link className="link left" to="/donate">Adventures</Link>
+                        </Button >
+                        <Button className="login">
+                        <Link  class="link" to="/login">LogIn/SignUp</Link>
+                        </Button>
+                    </Typography>
+                  </Toolbar>
+              </AppBar> }
         </div>
         )
     }

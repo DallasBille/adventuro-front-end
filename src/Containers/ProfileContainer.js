@@ -10,34 +10,37 @@ import { connect } from 'react-redux'
 import UserAdventureList from '../Components/ProfileComponents/UserAdventureList'
 
 
-
 const ProfileContainer = (props) => {
 
+
+
     const loadUserAdventures = () => {
-        return props.user_adventures.map(adventure => {
-            return <UserAdventureList adventures={adventure}/>
+        const userAdventures = props.adventures.adventures.filter(adventure => {
+            return adventure.user_id === props.user.id
+        })
+        return userAdventures.map(adventure => {
+            return <UserAdventureList myAdventure={adventure}/>
         })
     }
-
     const loadUserDonations = () => {
-        return props.donation_adventures.map(donations => {
+        return props.user.donation_adventures.map(donations => {
             return <UserDonations donations={donations}/>
         })
     }
-
+    console.log(props);
     return(
         <div>
-            <h3> My Donations</h3>
-          <h3>{props.full_name}</h3>
+         <h3> My Donations</h3>
           {loadUserAdventures()}
           {loadUserDonations()}
         </div>
+
     )
 
 }
 
-const mapStateToProps  = ({user}) => {
-    return user
+const mapStateToProps  = (state) => {
+    return state
 }
 
 export default connect(mapStateToProps, null)(ProfileContainer)

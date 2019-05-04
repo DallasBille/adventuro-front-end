@@ -3,15 +3,15 @@ import { loadAdventureAction } from '../Redux/actions/adventureActions'
 import { createAdventureAction } from '../Redux/actions/adventureActions'
 import { updateAdventureAction } from '../Redux/actions/adventureActions'
 
-export const fetchAdventures = () => {
-    return (dispatch) => {
-        fetch(`http://localhost:3000/api/v1/adventures`)
-        .then(res => res.json())
-        .then(adventures => {
-        dispatch(loadAdventuresAction(adventures))
-        })
-    }
-}
+// export const fetchAdventures = () => {
+//     return (dispatch) => {
+//         fetch(`http://localhost:3000/api/v1/adventures`)
+//         .then(res => res.json())
+//         .then(adventures => {
+//         dispatch(loadAdventuresAction(adventures))
+//         })
+//     }
+// }
 
 export const showAdventure = (urlParam) => {
     return (dispatch) => {
@@ -23,18 +23,15 @@ export const showAdventure = (urlParam) => {
     }
 }
 
-export const createAdventure = (adventure) => {
+export const createAdventure = (formData) => {
     return (dispatch) => {
         fetch(`http://localhost:3000/api/v1/adventures`, {
             method: "POST",
-            headers: {
-                'Content-Type' : 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify(adventure)
+            body: formData
         })
         .then(res => res.json())
         .then(adventure => {
+            debugger
             dispatch(createAdventureAction(adventure))
     })
     }

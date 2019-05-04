@@ -1,13 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import AdventureCard from '../Components/DonateComponents/AdventureCard'
-import { fetchAdventures } from "../Adapters/adventureAdapters"
 
 class DonateContainer extends React.Component {
-
-    componentDidMount(){
-        this.props.fetchAdventures()
-    }
 
      createAdventureCards = () => {
          return this.props.adventures.map(adventure => {
@@ -17,7 +12,7 @@ class DonateContainer extends React.Component {
 
     render(){
         return(
-            <div className="donate-container">
+            <div className="donate-container height">
             {this.createAdventureCards()}
             </div>
             )
@@ -29,4 +24,4 @@ const mapStateToProps = ({adventures}) => {
     return adventures
 }
 
-export default connect(mapStateToProps, {fetchAdventures})(DonateContainer)
+export default connect(mapStateToProps, null)(DonateContainer)

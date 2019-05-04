@@ -6,8 +6,7 @@ import Footer from './Components/Footer'
 import RouterComp from './Components/RouterComp'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { connect } from 'react-redux'
-
-
+// import { fetchAdventures } from "./Adapters/adventureAdapters"
 
 class App extends React.Component {
 
@@ -21,7 +20,14 @@ class App extends React.Component {
                  this.props.loadUser(user.user)
                   this.props.setToken(token)
             })
+
         }
+        fetch(`http://localhost:3000/api/v1/adventures`)
+        .then(res => res.json())
+        .then(adventures => {
+          this.props.fetchAdventures(adventures)
+        })
+
     }
 
     render(){
@@ -31,6 +37,8 @@ class App extends React.Component {
             <h3>App</h3>
             <Nav/>
             <RouterComp/>
+            <div className="clear">
+            </div>
             <Footer/>
             </Router>
         </div>
@@ -45,7 +53,8 @@ const mapStateToProps = ({user}) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         loadUser: (user)=>{dispatch({type: "LOAD_USER", payload: user})},
-        setToken: (token)=>{dispatch({type: "SET_TOKEN", payload: token})}
+        setToken: (token)=>{dispatch({type: "SET_TOKEN", payload: token})},
+        fetchAdventures: (adventures)=>dispatch({type: "LOAD_ADVENTURES", payload: adventures})
 
     }
 }
