@@ -7,40 +7,45 @@ import ListItemAvatar from '@material-ui/core/ListItemAvatar';
 import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import { connect } from 'react-redux'
+import { fetchAdventures } from '../Adapters/adventureAdapters'
 import UserAdventureList from '../Components/ProfileComponents/UserAdventureList'
+import ProfileDonationsContainer from '../Containers/ProfileDonationsContainer'
+import UserInfo from '../Components/ProfileComponents/UserInfo'
+class ProfileContainer extends React.Component {
 
+    componentDidMount(){
+        this.props.fetchAdventures()
+    }
 
-const ProfileContainer = (props) => {
-
-
-
-    const loadUserAdventures = () => {
-        const userAdventures = props.adventures.adventures.filter(adventure => {
-            return adventure.user_id === props.user.id
+     loadUserAdventures = () => {
+        const userAdventures = this.props.adventures.adventures.filter(adventure => {
+            return adventure.user_id === this.props.user.id
         })
         return userAdventures.map(adventure => {
             return <UserAdventureList myAdventure={adventure}/>
         })
     }
-    const loadUserDonations = () => {
-        return props.user.donation_adventures.map(donations => {
-            return <UserDonations donations={donations}/>
-        })
-    }
-    console.log(props);
+    //  loadUserDonations = () => {
+    //     return this.props.user.donation_adventures.map(donations => {
+    //         return <UserDonations donations={donations}/>
+    //     })
+    // }
+    render(){
+        console.log(this.props.user.donation_adventures);
     return(
         <div>
-         <h3> My Donations</h3>
-          {loadUserAdventures()}
-          {loadUserDonations()}
+          <UserInfo/>
+          <ProfileDonationsContainer donations={this.props.user.user_donations}/>
+          {this.loadUserAdventures()}
         </div>
 
     )
-
+    }
 }
+// {this.loadUserDonations()}
 
 const mapStateToProps  = (state) => {
     return state
 }
 
-export default connect(mapStateToProps, null)(ProfileContainer)
+export default connect(mapStateToProps, {fetchAdventures})(ProfileContainer)

@@ -1,7 +1,7 @@
 import React from 'react'
 import { createAdventure } from '../Adapters/adventureAdapters'
 import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+// import { Redirect } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 // import ActiveStorageProvider from 'react-activestorage-provider'
@@ -51,6 +51,10 @@ import Button from '@material-ui/core/Button';
      handleFile = (event) => {
          this.setState({image: event.target.files[0]})
      }
+
+     // hasAdventure = () => {
+     //
+     // }
 
 
     render(){
@@ -107,5 +111,3 @@ import Button from '@material-ui/core/Button';
 
 
  export default connect(mapStateToProps, {createAdventure})(CreateAdventure)
-
- 

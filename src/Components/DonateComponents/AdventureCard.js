@@ -9,6 +9,8 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import PropTypes from 'prop-types';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { showAdventure } from '../../Adapters/adventureAdapters'
+import {connect} from "react-redux"
 
 const AdventureCard = (props) => {
 
@@ -26,9 +28,14 @@ const AdventureCard = (props) => {
         return short + "..."
 
     }
-    console.log(props.adventure.imageURL);
+
+    const setAdventureState = (event) => {
+        console.log(event);
+        props.showAdventure(props.adventure.id)
+    }
+
     return(
-    <Link to={`/${props.adventure.id}`}>
+    <Link onClick={setAdventureState} to={`/${props.adventure.id}`}>
     <div>
     <Card className="adventure-card">
     <CardActionArea>
@@ -65,4 +72,8 @@ const AdventureCard = (props) => {
     )
 }
 
-export default AdventureCard
+const mapStateToProps = ({adventure}) => {
+    return adventure
+}
+
+export default connect(mapStateToProps, {showAdventure})(AdventureCard)

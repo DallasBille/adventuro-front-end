@@ -9,6 +9,7 @@ const donationReducer = (state = initialState, action) => {
     switch(action.type){
 
         case "CREATE_DONATION":
+        console.log('DONATION', donationObj );
         return {...state,
                 user_id: donationObj.user_id,
                 adventure_id: donationObj.adventure_id,

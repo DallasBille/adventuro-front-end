@@ -1,8 +1,9 @@
 import { createDonationAction } from '../Redux/actions/donationActions'
+import { addDonationToAdventure } from '../Redux/actions/donationActions'
 
 export const createDonation = (donation) => {
     return (dispatch) => {
-        fetch(`http://localhost:3000/api/v1/donations`, {
+        return fetch(`http://localhost:3000/api/v1/donations`, {
             method: "POST",
             headers: {
                 'Content-Type' : 'application/json',
@@ -11,8 +12,5 @@ export const createDonation = (donation) => {
             body: JSON.stringify(donation)
         })
         .then(res => res.json())
-        .then(newDonationObj => {
-            dispatch(createDonationAction(newDonationObj))
-    })
     }
 }

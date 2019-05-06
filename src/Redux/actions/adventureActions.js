@@ -1,4 +1,4 @@
-// export const loadAdventuresAction = (adventures) => ({type: "LOAD_ADVENTURES", payload: adventures})
+export const loadAdventuresAction = (adventures) => ({type: "LOAD_ADVENTURES", payload: adventures})
 
 export const loadAdventureAction = (adventure) => ({type: "LOAD_ADVENTURE", payload: adventure})
 

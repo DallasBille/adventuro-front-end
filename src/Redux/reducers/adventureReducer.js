@@ -1,6 +1,6 @@
 const initialState = {
     adventures: [],
-    adventure: ''
+    adventure: {}
 }
 
 const adventureReducer = (state = initialState, action) => {
@@ -12,7 +12,9 @@ const adventureReducer = (state = initialState, action) => {
         return {...state, adventure: action.payload}
 
         case "CREATE_ADVENTURE":
-        return {...state, adventure: action.payload}
+        let newAdv = action.payload
+        let addedAdv = [newAdv, ...state.adventures]
+        return {...state, adventures: addedAdv}
 
         case "UPDATE_ADVENTURE":
         const newAdventures = state.adventures.map(adventure => {
@@ -24,7 +26,12 @@ const adventureReducer = (state = initialState, action) => {
         })
         return {...state, adventures: newAdventures}
 
-
+        case "ADD_DONATION":
+        let advCopy = [...state.adventure]
+        advCopy.donations = [...advCopy.donations, action.payload]
+        let test = {...state, adventures: advCopy }
+        debugger
+        return {...state, adventures: advCopy }
         default:
         return state
     }

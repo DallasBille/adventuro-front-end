@@ -110,6 +110,7 @@ footer {
 }
 
 .donate-container {
+  padding-top: 25px;
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
@@ -119,8 +120,8 @@ footer {
 
 .user-adventure-card {
     margin: 20px;
-    float: right;
-    width: 60vw;
+    float: left;
+    width: 50vw;
     border: 1px solid #ccc;
 }
 
@@ -131,6 +132,8 @@ footer {
 .user-donations{
     float: right;
     width: 35vw;
+}
+.user-donation-list {
 }
 
 
@@ -186,4 +189,26 @@ footer {
 
 .height {
     min-height: 90vh;
+}
+
+.user-info {
+    background-color: tan;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.profile-donations-container {
+    float: right;
+    border-style: solid;
+    height: 70vh;
+    width: 40vw;
+    margin-right: 15px;
+    overflow: auto;
+}
+
+.my-donations {
+    float: left;
+    background-color: red;
+    position: fixed;
+    width: 40vw;
 }

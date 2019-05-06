@@ -3,13 +3,6 @@ import { connect } from 'react-redux'
 import ProgressBar from './ProgressBar'
 import DonateDialog from './DonateDialog'
 import AdventureDivider from './AdventureDivider'
-// import Button from '@material-ui/core/Button';
-// import TextField from '@material-ui/core/TextField';
-// import Dialog from '@material-ui/core/Dialog';
-// import DialogActions from '@material-ui/core/DialogActions';
-// import DialogContent from '@material-ui/core/DialogContent';
-// import DialogContentText from '@material-ui/core/DialogContentText';
-// import DialogTitle from '@material-ui/core/DialogTitle';
 
 
 
@@ -17,7 +10,7 @@ import AdventureDivider from './AdventureDivider'
 class AdventureShow extends React.Component {
 
     state ={
-        adventure: '',
+        adventure: {},
         percentage: 0
     }
 
@@ -31,8 +24,13 @@ class AdventureShow extends React.Component {
         })
     }
 
+    updateAdventureState = (donation) => {
+        const updatedAdventure = {...this.state.adventure, ...donation.adventure}
+        this.setState({ adventure: updatedAdventure})
+    }
+
+
     render(){
-        console.log(this.state);
     return (
         <div className="adventure-show">
             <AdventureDivider/>
@@ -44,15 +42,15 @@ class AdventureShow extends React.Component {
             <br/>
             <br/>
             <p>{this.state.adventure.donations_number} donated</p>
-            <DonateDialog adventureId={this.state.adventure.id}/>
+            <DonateDialog  updateAdventureState={this.updateAdventureState} adventureId={this.state.adventure.id}/>
         </div>
      )
     }
 
 }
 
-// const mapPropsToState = (state) => {
-//     return state
-// }
+const mapStateToProps = ({adventure}) => {
+    return adventure
+}
 
-export default AdventureShow
+export default connect(mapStateToProps, null)(AdventureShow)
