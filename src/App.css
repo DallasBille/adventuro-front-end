@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  width: 100vw;
 }
 
 .App-logo {
@@ -10,7 +11,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 10vh;
+  min-height: 5vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,4 +31,184 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.adventure-card {
+
+    margin: 10px;
+    padding: inherit;
+    width: 250px;
+    height: 350px;
+    border: 1px solid #ccc;
+}
+body {
+    font-family: 'Nanum Gothic', sans-serif;
+}
+.donate-container a:link, .donate-container a:visited, .donate-container a:active {
+  color: #000;
+  text-decoration: none;
+}
+
+.home-image {
+    width: 95%;
+}
+
+footer {
+
+  border-top: 3px solid #ccc;
+  background-color: #999;
+  color: #fff;
+  height: 100px;
+}
+
+.link {
+    text-decoration: white;
+    color: white;
+}
+
+.left {
+    float: left;
+}
+
+.logout {
+    float: right;
+    text-decoration: white;
+    color: white;
+}
+
+#random {
+    width: 90vw;
+}
+/* =========adventure show */
+.adventure-show {
+    margin: 100px;
+    padding-right: -100px;
+}
+
+/* =============Progress Bar */
+.progress-bar{
+    display: inline-block;
+    position: relative;
+    height:20px;
+    width:350px;
+    border-radius: 50px;
+    border: 1px solid #333
+}
+
+.filler {
+/* display: inline-block; */
+ background: #1DA598;
+ height: 100%;
+ border-radius: inherit;
+ transition: width .2s ease-in;
+}
+/* ==========PROFILE */
+
+.profile-container {
+    margin: auto;
+    padding-top: 25px;
+}
+
+.donate-container {
+  padding-top: 25px;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100vw;
+  margin: auto;
+  border-bottom: 0px;
+}
+
+.user-adventure-card {
+    margin: 20px;
+    float: left;
+    width: 50vw;
+    border: 1px solid #ccc;
+}
+
+.clear {
+    clear: both;
+}
+
+.user-donations{
+    float: right;
+    width: 35vw;
+}
+.user-donation-list {
+    padding-top: 40px;
+}
+
+
+/*  =========== adventure css*/
+.adventure-images {
+    padding-top: -50px;
+    width: 220px;
+    height: 165px;
+    padding-right: 100px;
+}
+
+.adventure-show-divider {
+    margin-top: -50px;
+    width: 100vw;
+    height: 100px;
+    background-color: #dfdfdf;
+}
+
+.adventure-show-image {
+    padding-top: 20px;
+    width: 550px;
+    height: 413px;
+}
+.adventure-show-text{
+    display: inline-block;
+    width: 800px;
+}
+
+.create-container {
+    margin: auto;
+    width: 600px;
+    margin: 100px auto 100px;
+}
+
+.adventure-select {
+    border: 1px solid #ccc;
+    width: 120px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+
+.adventure-select select {
+    padding: 5px 8px;
+    width: 130%;
+    border: none;
+    box-shadow: none;
+    background: transparent;
+    background-image: none;
+    -webkit-appearance: none;
+}
+
+.height {
+    min-height: 90vh;
+}
+
+.user-info {
+    background-color: tan;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.profile-donations-container {
+    float: right;
+    border-style: solid;
+    height: 70vh;
+    width: 40vw;
+    margin-right: 15px;
+    overflow: auto;
+}
+
+.my-donations {
+    float: left;
+    background-color: red;
+    position: relative;
+    width: 40vw;
 }

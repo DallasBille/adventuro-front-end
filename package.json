@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "react": "^16.8.6",
+    "react-activestorage-provider": "^0.8.0",
     "react-browser-router": "^2.1.2",
     "react-dom": "^16.8.6",
     "react-redux": "^7.0.2",

@@ -1,21 +1,85 @@
 const initialState = {
-    user: {}
+    id: "",
+    username: "",
+    email: "",
+    first_name: "",
+    last_name: "",
+    full_name: "",
+    token: "",
+    user_adventures: [],
+    donation_adventures: [],
+    user_donations: []
 }
 
 const userReducer = (state = initialState, action) => {
+    let userObj = action.payload
     switch(action.type){
         case "CREATE_USER":
-        return {...state, user: action.payload}
-        // this.props.history.push("/home")
+        return {...state,
+            id: userObj.id,
+            username: userObj.username,
+            email: userObj.email,
+            first_name: userObj.first_name,
+            last_name: userObj.last_name,
+            full_name: userObj.full_name,
+            user_adventures: userObj.user_adventures,
+            donation_adventures: userObj.donation_adventures,
+            user_donations: userObj.user_donations
+        }
+
         case "LOAD_USER":
-        return {...state, user: action.payload}
+        // let userObj = action.payload
+        return {...state,
+            id: userObj.id,
+            username: userObj.username,
+            email: userObj.email,
+            first_name: userObj.first_name,
+            last_name: userObj.last_name,
+            full_name: userObj.full_name,
+            user_adventures: userObj.user_adventures,
+            donation_adventures: userObj.donation_adventures,
+            user_donations: userObj.user_donations
+
+        }
+
         case "LOGOUT_USER":
         localStorage.clear()
-        console.log("reducer",state, action);
-        return {...state, user: {} }
+        return {...state,
+        id: "",
+        username: "",
+        email: "",
+        first_name: "",
+        last_name: "",
+        full_name: "",
+        token: "",
+        user_adventures: [],
+        donation_adventures: [],
+        user_donations: []
+    }
+        
+
+        case "LOGIN_USER":
+        return {...state,
+            id: userObj.id,
+            username: userObj.username,
+            email: userObj.email,
+            first_name: userObj.first_name,
+            last_name: userObj.last_name,
+            full_name: userObj.full_name,
+            user_adventures: userObj.user_adventures,
+            donation_adventures: userObj.donation_adventures,
+            user_donations: userObj.user_donations
+
+        }
+        case "SET_TOKEN":
+      return {
+        ...state,
+        token: action.payload
+      }
         default:
         return state
     }
 }
+
 
 export default userReducer;

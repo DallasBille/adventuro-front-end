@@ -1,20 +1,26 @@
 import React from 'react'
+import { logOutUserAction } from '../Redux/actions/userActions'
 import { connect } from 'react-redux'
-
 const LogOut = (props) => {
+
+    // const logOutRedirect = () => {
+    //     props.logOut()
+    // }
 console.log(props);
     return(
         <div>
-            <h1>LogOut</h1>
-            <button onClick={props.logOut, ()=> props.history.push('/signup')}>Log Out</button>
+            {}
         </div>
     )
+
+
 }
+
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        logOut: () => dispatch({type:"LOGOUT_USER", payload: {}})
+        logOut: () => dispatch(logOutUserAction())
     }
 }
 
-export default connect(null ,mapDispatchToProps)(LogOut)
+export default connect(null, mapDispatchToProps)(LogOut)
