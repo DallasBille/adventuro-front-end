@@ -15,6 +15,10 @@ class DonateContainer extends React.Component {
          })
     }
 
+    filteredAdventures = () => {
+
+    }
+
     render(){
         return(
             <div className="donate-container height">

@@ -25,11 +25,7 @@ class ProfileContainer extends React.Component {
             return <UserAdventureList myAdventure={adventure}/>
         })
     }
-    //  loadUserDonations = () => {
-    //     return this.props.user.donation_adventures.map(donations => {
-    //         return <UserDonations donations={donations}/>
-    //     })
-    // }
+
     render(){
         console.log(this.props.user.donation_adventures);
     return(
@@ -42,7 +38,7 @@ class ProfileContainer extends React.Component {
     )
     }
 }
-// {this.loadUserDonations()}
+
 
 const mapStateToProps  = (state) => {
     return state

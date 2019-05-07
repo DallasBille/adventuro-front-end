@@ -12,7 +12,7 @@ const ProfileDonationsContainer = (props) => {
     return(
         <div className="profile-donations-container">
             <div className="my-donations">
-                <h3>My Donations</h3>
+                <h3>Trips You Donated To</h3>
             </div>
             {loadUserDonations()}
         </div>

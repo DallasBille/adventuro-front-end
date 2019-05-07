@@ -134,6 +134,7 @@ footer {
     width: 35vw;
 }
 .user-donation-list {
+    padding-top: 40px;
 }
 
 
@@ -157,10 +158,15 @@ footer {
     width: 550px;
     height: 413px;
 }
+.adventure-show-text{
+    display: inline-block;
+    width: 800px;
+}
 
 .create-container {
     margin: auto;
     width: 600px;
+    margin: 100px auto 100px;
 }
 
 .adventure-select {
@@ -180,12 +186,6 @@ footer {
     background-image: none;
     -webkit-appearance: none;
 }
-
-/* #footer-id {
-    width: 100%;
-    position: absolute;
-    bottom: 0;
-} */
 
 .height {
     min-height: 90vh;
@@ -209,6 +209,6 @@ footer {
 .my-donations {
     float: left;
     background-color: red;
-    position: fixed;
+    position: relative;
     width: 40vw;
 }

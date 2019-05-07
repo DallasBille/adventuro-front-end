@@ -6,7 +6,6 @@ const HomeContainer = () => {
         <div>
         <img className="home-image" src="https://i.imgur.com/gtUldYo.jpg"/>
         <h3>Start your adventure </h3>
-
         </div>
     )
 }

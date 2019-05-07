@@ -6,8 +6,6 @@ import Footer from './Components/Footer'
 import RouterComp from './Components/RouterComp'
 import { BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import { connect } from 'react-redux'
-// import {Redirect} from 'react-router-dom'
-// import { fetchAdventures } from "./Adapters/adventureAdapters"
 
 class App extends React.Component {
 

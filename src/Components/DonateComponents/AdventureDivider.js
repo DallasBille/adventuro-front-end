@@ -6,8 +6,8 @@ const AdventureDivider = (props) => {
 
     return (
         <div className="adventure-show-divider">
-            <h1>Yo, help these guys out.</h1>
-            <p>Do what you want to do for once in your life.</p>
+
+        <h1>Support the Adventure of {props.user ? props.user.first_name : null }</h1>
         </div>
     )
 

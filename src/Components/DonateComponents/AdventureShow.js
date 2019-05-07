@@ -31,12 +31,13 @@ class AdventureShow extends React.Component {
 
 
     render(){
+        console.log(this.state.adventure.user);
     return (
         <div className="adventure-show">
-            <AdventureDivider/>
+            <AdventureDivider user={this.state.adventure.user}/>
             <img className="adventure-show-image"src={`http://localhost:3000/${this.state.adventure.imageURL}`}/>
             <h3>{this.state.adventure.title}</h3>
-            <p>{this.state.adventure.mission}</p>
+            <p className="adventure-show-text">{this.state.adventure.mission}</p>
             <h4>${this.state.adventure.sum_amount} Donated of</h4><p>${this.state.adventure.cost}</p>
             <ProgressBar percentage={(this.state.adventure.sum_amount/this.state.adventure.cost) * 100}/>
             <br/>
