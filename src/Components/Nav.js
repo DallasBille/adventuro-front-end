@@ -38,7 +38,7 @@ class Nav extends Component {
                         <Button className="logout">
                         <Link  class="link" onClick={this.logOutRedirect}>LogOut</Link>
                         </Button>
-                        <div className="nav-logo">Adventuro</div>
+                        <div className="nav-logo">Adventuro Mutha Fucka</div>
                     </Typography>
                   </Toolbar>
                 </AppBar> :
