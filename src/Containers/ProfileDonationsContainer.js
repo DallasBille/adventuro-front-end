@@ -8,7 +8,7 @@ const ProfileDonationsContainer = (props) => {
            return <UserDonations donations={donations}/>
        })
    }
-   console.log(props.donations);
+
     return(
         <div className="profile-donations-container">
             <div className="my-donations">

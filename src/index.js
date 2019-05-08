@@ -11,9 +11,10 @@ import adventureReducer from './Redux/reducers/adventureReducer'
 import donationReducer from './Redux/reducers/donationReducer'
 import toggleReducer from './Redux/reducers/toggleReducer'
 import errorsReducer from './Redux/reducers/errorsReducer'
+import filterReducer from './Redux/reducers/filterReducer'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-const rootReducer = combineReducers({user: userReducer, adventures: adventureReducer, donations: donationReducer, toggle: toggleReducer, errors: errorsReducer })
+const rootReducer = combineReducers({user: userReducer, adventures: adventureReducer, donations: donationReducer, toggle: toggleReducer, errors: errorsReducer, filter: filterReducer })
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 ReactDOM.render(

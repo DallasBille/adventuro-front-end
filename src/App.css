@@ -70,7 +70,10 @@ body {
 }
 
 .nav-logo {
-    padding-top: 10px;
+    position: fixed;
+    left: 43%;
+    top: 2%;
+    width: fit-content;
     font-size: 35px;
     font-family:'Modak', cursive;
 }
@@ -93,7 +96,17 @@ footer {
 }
 
 .logout {
-    float: right;
+    position:fixed;
+    left: 35%;
+    top: 10%;
+    text-decoration: white;
+    color: white;
+}
+
+.login {
+    position:fixed;
+    left: 40%;
+    padding-top: -10px;
     text-decoration: white;
     color: white;
 }
@@ -284,4 +297,13 @@ footer {
 .user-donation-link {
     text-decoration: none;
     color: black;
+}
+
+.filter {
+    width: 100vw;
+    height: 80px;
+    background-color: #AD8A64;
+}
+
+.filter-label {
 }
