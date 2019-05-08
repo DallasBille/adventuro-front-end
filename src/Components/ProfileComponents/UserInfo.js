@@ -3,11 +3,13 @@ import { connect } from "react-redux"
 
 const UserInfo = (props) => {
 
-console.log(props);
+const upperCaseName = () => {
+    return props.first_name.charAt(0).toUpperCase() + props.first_name.slice(1)
+}
 
     return(
         <div className="user-info">
-            <h2>Hello, {props.first_name}</h2>
+            <h2>Hello, {upperCaseName()}</h2>
         </div>
     )
 }

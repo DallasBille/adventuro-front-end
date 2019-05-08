@@ -10,6 +10,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import { connect } from 'react-redux'
 import {withRouter} from 'react-router'
 import { showAdventure } from '../../Adapters/adventureAdapters'
+import { addUserDonationAction } from '../../Redux//actions/userActions'
 
  class DonateDialog extends React.Component {
   state = {
@@ -45,7 +46,10 @@ import { showAdventure } from '../../Adapters/adventureAdapters'
   handleSubmit = () => {
      let donation = this.state.donation
      this.props.createDonation(donation)
-     .then(this.props.updateAdventureState)
+     .then(res => {
+         this.props.updateAdventureState(res)
+         this.props.addUserDonationAction(res.donation)
+     })
      this.handleClose()
   }
 
@@ -96,4 +100,4 @@ import { showAdventure } from '../../Adapters/adventureAdapters'
 const mapStateToProps = ({user}) => {
     return user
 }
-export default withRouter(connect(mapStateToProps,{ createDonation, showAdventure })(DonateDialog))
+export default withRouter(connect(mapStateToProps,{ createDonation, showAdventure, addUserDonationAction })(DonateDialog))

@@ -5,3 +5,5 @@ export const loadAdventureAction = (adventure) => ({type: "LOAD_ADVENTURE", payl
 export const createAdventureAction = (adventure) => ({type: "CREATE_ADVENTURE", payload: adventure})
 
 export const updateAdventureAction = (adventure) => ({type: "UPDATE_ADVENTURE", payload: adventure})
+
+export const setAdventureErrorsAction = (errors) => ({type: "SET_ADVENTURE_ERRORS", payload: errors})

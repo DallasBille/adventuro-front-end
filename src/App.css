@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #F15156;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
@@ -34,8 +34,7 @@
 }
 
 .adventure-card {
-
-    margin: 10px;
+    margin: 25px;
     padding: inherit;
     width: 250px;
     height: 350px;
@@ -45,18 +44,41 @@ body {
     font-family: 'Nanum Gothic', sans-serif;
 }
 .donate-container a:link, .donate-container a:visited, .donate-container a:active {
+    margin: auto;
   color: #000;
   text-decoration: none;
 }
 
 .home-image {
-    width: 95%;
+    width: 100%;
+}
+.home-div {
+    padding-top: 8px;
+    padding-bottom: 30px;
+    height: 40px;
+    background-color: #BF8B85;
+}
+
+.home-div-header {
+    text-decoration: none;
+    color: #fff;
+}
+
+#nav-bar {
+    color: #fff;
+    background-color: #AD8A64;
+}
+
+.nav-logo {
+    padding-top: 10px;
+    font-size: 35px;
+    font-family:'Modak', cursive;
 }
 
 footer {
 
   border-top: 3px solid #ccc;
-  background-color: #999;
+  background-color: #5D5F71;
   color: #fff;
   height: 100px;
 }
@@ -96,7 +118,6 @@ footer {
 }
 
 .filler {
-/* display: inline-block; */
  background: #1DA598;
  height: 100%;
  border-radius: inherit;
@@ -108,7 +129,7 @@ footer {
     margin: auto;
     padding-top: 25px;
 }
-
+/*  ========== DONATE CONTAINER*/
 .donate-container {
   padding-top: 25px;
   display: flex;
@@ -116,6 +137,29 @@ footer {
   width: 100vw;
   margin: auto;
   border-bottom: 0px;
+}
+
+.adventure-browse-div {
+    text-align: left;
+    padding-left: 150px;
+    height: 80px;
+    width: 100vw;
+}
+.adventure-browse-button{
+    margin: -60px 800px 20px 0px;
+    cursor: pointer;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 3px solid #BF8B85;
+    background: transparent;
+    color: black;
+    font-size: 30px;
+}
+.adventure-browse-button:hover{
+    color: white;
+    border-radius: 6px;
+    background-color: #BF8B85;
+    font-size: 30px;
 }
 
 .user-adventure-card {
@@ -166,7 +210,7 @@ footer {
 .create-container {
     margin: auto;
     width: 600px;
-    margin: 100px auto 100px;
+    margin: 120px auto 120px;
 }
 
 .adventure-select {
@@ -192,7 +236,7 @@ footer {
 }
 
 .user-info {
-    background-color: tan;
+    background-color: #BF8B85;
     padding-bottom: 20px;
     padding-top: 20px;
 }
@@ -207,8 +251,37 @@ footer {
 }
 
 .my-donations {
+    color: white;
     float: left;
-    background-color: red;
+    background-color: #5D5F71;
     position: relative;
     width: 40vw;
+}
+.sign-up {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.log-in{
+    margin-top: 100px;
+}
+
+.about-text {
+    display: inline-block;
+    width: 60vw;
+    font-size: 24px;
+}
+
+.user-donation-list {
+    border-bottom: 2px black;
+    background-color: #fff;
+}
+.user-donation-list:hover {
+    background-color: #AD8A64;
+
+}
+
+.user-donation-link {
+    text-decoration: none;
+    color: black;
 }

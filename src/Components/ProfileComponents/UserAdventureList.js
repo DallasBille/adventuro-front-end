@@ -69,10 +69,10 @@ render(){
         </CardActionArea>
         <CardActions>
           <Typography gutterBottom variant="h12" component="h6">
-            Cost ${this.props.myAdventure.cost}
+            Goal: ${this.props.myAdventure.cost}
           </Typography>
           <Typography gutterBottom variant="h12" component="h6">
-            Donated ${this.props.myAdventure.sum_amount}
+            Donated: ${this.props.myAdventure.sum_amount}
           </Typography>
         </CardActions>
         <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>

@@ -16,6 +16,7 @@ const RouterComp = () => {
             <Route path="/login" component={Landing}/>
             <Route path='/create' render={props => <CreateAdventure {...props}/>} />
             <Route path='/:id' component={AdventureShow} />
+            <Route path="/" component={HomeContainer}/>
         </Switch>
     )
 }

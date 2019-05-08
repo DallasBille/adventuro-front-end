@@ -20,7 +20,7 @@ class Nav extends Component {
         return(
         <div>
             {!!this.props.token ?
-                <AppBar  position="fixed">
+                <AppBar  id="nav-bar" position="fixed">
                   <Toolbar >
                     <Typography id="random">
                         <Button className="left">
@@ -38,10 +38,11 @@ class Nav extends Component {
                         <Button className="logout">
                         <Link  class="link" onClick={this.logOutRedirect}>LogOut</Link>
                         </Button>
+                        <div className="nav-logo">Adventuro</div>
                     </Typography>
                   </Toolbar>
                 </AppBar> :
-                <AppBar position="fixed">
+                <AppBar id="nav-bar" position="fixed">
                   <Toolbar >
                     <Typography id="random">
                         <Button className="left">

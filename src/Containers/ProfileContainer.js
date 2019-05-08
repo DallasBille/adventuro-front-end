@@ -11,11 +11,9 @@ import { fetchAdventures } from '../Adapters/adventureAdapters'
 import UserAdventureList from '../Components/ProfileComponents/UserAdventureList'
 import ProfileDonationsContainer from '../Containers/ProfileDonationsContainer'
 import UserInfo from '../Components/ProfileComponents/UserInfo'
-class ProfileContainer extends React.Component {
 
-    componentDidMount(){
-        this.props.fetchAdventures()
-    }
+
+class ProfileContainer extends React.Component {
 
      loadUserAdventures = () => {
         const userAdventures = this.props.adventures.adventures.filter(adventure => {
@@ -27,7 +25,6 @@ class ProfileContainer extends React.Component {
     }
 
     render(){
-        console.log(this.props.user.donation_adventures);
     return(
         <div>
           <UserInfo/>

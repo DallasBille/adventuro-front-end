@@ -60,10 +60,10 @@ const AdventureCard = (props) => {
         More
       </Button>
       <Typography gutterBottom variant="h12" component="h6">
-        Cost ${props.adventure.cost}
+        Goal: ${props.adventure.cost}
       </Typography>
       <Typography gutterBottom variant="h12" component="h6">
-        Donated ${props.adventure.sum_amount}
+        Donated: ${props.adventure.sum_amount}
       </Typography>
     </CardActions>
   </Card>

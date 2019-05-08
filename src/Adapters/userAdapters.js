@@ -1,6 +1,8 @@
 import { createUserAction } from "../Redux/actions/userActions"
 import { logInUserAction } from "../Redux/actions/userActions"
 import { setTokenAction} from "../Redux/actions/userActions"
+import { setUserErrorsAction } from "../Redux/actions/userActions"
+import { loadUserAction} from "../Redux/actions/userActions"
 
 const signUpNewUser = (userObj) =>
     dispatch =>
@@ -31,13 +33,28 @@ const signUpNewUser = (userObj) =>
         })
         .then(res => res.json())
         .then(user => {
+            if(!!user.errors){
+            dispatch(setUserErrorsAction(user.errors))
+            } else {
             dispatch(logInUserAction(user.user))
             dispatch(setTokenAction(user.jwt))
             localStorage.setItem("token", user.jwt)
+            }
         })
 
+    const currentUser = (token) =>
+        dispatch =>
+        fetch(`http://localhost:3000/api/v1/current_user`,{ headers: { Authorization: `Bearer ${token}` } })
+        .then(res => res.json())
+        .then(user => {
+                // this.props.loadUser(user.user)
+                dispatch(loadUserAction(user.user))
+                dispatch(setTokenAction(user.jwt))
+                // this.props.setToken(token)
+            })
 
 
 
+export { currentUser }
 export { logInUser}
 export { signUpNewUser }
