@@ -1,10 +1,8 @@
 import React from 'react'
 import { createAdventure } from '../Adapters/adventureAdapters'
 import { connect } from 'react-redux'
-// import { Redirect } from 'react-router-dom'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-// import ActiveStorageProvider from 'react-activestorage-provider'
 
  class CreateAdventure extends React.Component {
 
@@ -21,12 +19,15 @@ import Button from '@material-ui/core/Button';
      handleCreate = (event) => {
          this.setState({
              [event.target.name]: event.target.value,
-             user_id: this.props.id
+             user_id: this.props.user.id
          })
      }
 
      handleSubmit = (event) => {
          event.preventDefault()
+         if(this.state.title === '' || this.state.mission === '' || this.state.cost === '' || this.state.image === null){
+                 return alert("Please fill out all fields")
+             }
          const formData = new FormData()
          formData.append('adventure[title]', this.state.title)
          formData.append('adventure[mission]', this.state.mission)
@@ -52,13 +53,8 @@ import Button from '@material-ui/core/Button';
          this.setState({image: event.target.files[0]})
      }
 
-     // hasAdventure = () => {
-     //
-     // }
-
-
     render(){
-        console.log(this.state);
+        console.log(this.props);
      return(
          <div className="create-container">
            <br/>
@@ -75,7 +71,7 @@ import Button from '@material-ui/core/Button';
                    shrink: true,
                  }}
                />
-                 <TextField onChange={this.handleCreate} value={this.state.cost} name="cost" id="standard-full-width"
+                 <TextField onChange={this.handleCreate} value={this.state.cost} type="number" name="cost" id="standard-full-width"
                  label="Goal" style={{ width: 100}} placeholder="Cost" margin="normal" InputLabelProps={{shrink: true,}}/>
                    <br/>
                    <br/>
@@ -106,9 +102,9 @@ import Button from '@material-ui/core/Button';
      )
      }
  }
- // <input onChange={this.handleCreate} value={this.state.cost} name="cost" type="text"/>
- const mapStateToProps = ({user}) => {
-     return user
+
+ const mapStateToProps = (state) => {
+     return state
  }
 
 

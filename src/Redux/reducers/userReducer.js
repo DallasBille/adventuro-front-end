@@ -56,7 +56,7 @@ const userReducer = (state = initialState, action) => {
         donation_adventures: [],
         user_donations: []
     }
-        
+
 
         case "LOGIN_USER":
         return {...state,
@@ -71,11 +71,22 @@ const userReducer = (state = initialState, action) => {
             user_donations: userObj.user_donations
 
         }
+        case "NEW_ADVENTURE":
+        let newAdventure = action.payload
+        let addedAdv = [...state.user_adventures, newAdventure]
+        return {...state, user_adventures: addedAdv}
+
+        case "NEW_DONATION":
+        let newDonation = action.payload
+        let addedDon = [newDonation ,...state.user_donations]
+        return {...state, user_donations: addedDon}
+
         case "SET_TOKEN":
-      return {
-        ...state,
-        token: action.payload
-      }
+        return {
+            ...state,
+            token: action.payload
+        }
+
         default:
         return state
     }

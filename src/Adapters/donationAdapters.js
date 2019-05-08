@@ -1,5 +1,5 @@
 import { createDonationAction } from '../Redux/actions/donationActions'
-import { addDonationToAdventure } from '../Redux/actions/donationActions'
+
 
 export const createDonation = (donation) => {
     return (dispatch) => {

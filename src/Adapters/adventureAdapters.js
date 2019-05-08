@@ -2,6 +2,9 @@ import { loadAdventuresAction } from '../Redux/actions/adventureActions'
 import { loadAdventureAction } from '../Redux/actions/adventureActions'
 import { createAdventureAction } from '../Redux/actions/adventureActions'
 import { updateAdventureAction } from '../Redux/actions/adventureActions'
+import { addUserAdventureAction} from '../Redux/actions/userActions'
+import { addUserDonationAction} from '../Redux/actions/userActions'
+import { setAdventureErrorsAction } from '../Redux/actions/adventureActions'
 
 export const fetchAdventures = () => {
     return (dispatch) => {
@@ -31,8 +34,13 @@ export const createAdventure = (formData) => {
         })
         .then(res => res.json())
         .then(adventure => {
+            if(!!adventure.errors){
+            dispatch(setAdventureErrorsAction(adventure.errors))
+            } else {
             dispatch(createAdventureAction(adventure))
-    })
+            dispatch(addUserAdventureAction(adventure))
+            }
+       })
     }
 }
 

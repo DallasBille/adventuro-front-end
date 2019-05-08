@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import AdventureCard from '../Components/DonateComponents/AdventureCard'
 import { fetchAdventures } from '../Adapters/adventureAdapters'
+import AdventureShowDiv from '../Components/Divs/AdventureShowDiv'
 
 class DonateContainer extends React.Component {
 
@@ -22,6 +23,7 @@ class DonateContainer extends React.Component {
     render(){
         return(
             <div className="donate-container height">
+            <AdventureShowDiv/>
             {this.createAdventureCards()}
             </div>
             )
