@@ -205,9 +205,21 @@ footer {
 
 .adventure-show-divider {
     margin-top: -50px;
-    width: 100vw;
+    width: 80vw;
     height: 100px;
-    background-color: #dfdfdf;
+    background-color: #5D5F71;
+}
+.advenure-show-header{
+    position: absolute;
+    padding-left: 15px;
+    padding-top: 15px;
+    color: white;
+
+}
+
+.charity-amount{
+    color: green;
+    font-weight: bold;
 }
 
 .adventure-show-image {
@@ -306,4 +318,24 @@ footer {
 }
 
 .filter-label {
+}
+
+.profile-header{
+    color: white;
+    margin-right: 1000px;
+    padding-right: 200px;
+}
+.profile-info {
+    display: inline-block;
+    margin-left: 20px;
+    width: 500px;
+}
+.profile-image{
+    display: inline-block;
+    width: 500px;
+    height: 375px;
+}
+
+.profile-landing-div{
+    align-items: center;
 }

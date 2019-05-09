@@ -9,7 +9,7 @@ const upperCaseName = () => {
 
     return(
         <div className="user-info">
-            <h2>Hello, {upperCaseName()}</h2>
+            <h2 className='profile-header'>Hey, {upperCaseName()}</h2>
         </div>
     )
 }

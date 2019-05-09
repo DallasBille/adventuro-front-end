@@ -6,9 +6,9 @@ const Home = (props) => {
     return(
         <div>
             <h1>Home Page</h1>
-            <p>Hello, {props.user.first_name}!</p>
+            <p>Hey, {props.user.first_name}!</p>
             <div className="home-divider">
-            
+
             </div>
         </div>
     )
