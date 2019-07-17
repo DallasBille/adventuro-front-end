@@ -30,7 +30,6 @@ class LogIn extends React.Component {
      }
 
   render(){
-      console.log(this.props);
       const {user, errors} = this.state
 
     return(
