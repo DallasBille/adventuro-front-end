@@ -7,3 +7,5 @@ export const createAdventureAction = (adventure) => ({type: "CREATE_ADVENTURE", 
 export const updateAdventureAction = (adventure) => ({type: "UPDATE_ADVENTURE", payload: adventure})
 
 export const setAdventureErrorsAction = (errors) => ({type: "SET_ADVENTURE_ERRORS", payload: errors})
+
+export const setFilterAction = (term) => ({type: "SET_FILTER_TERM", payload: term})

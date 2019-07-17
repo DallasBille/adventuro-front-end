@@ -51,6 +51,7 @@ class Nav extends Component {
                         <Button className="left" >
                         <Link className="link left" to="/donate">Adventures</Link>
                         </Button >
+                        <div className="nav-logo">Adventuro</div>
                         <Button className="login">
                         <Link  class="link" to="/login">LogIn/SignUp</Link>
                         </Button>

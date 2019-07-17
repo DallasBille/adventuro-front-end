@@ -27,7 +27,6 @@ class App extends React.Component {
     //     this.props.setToken(token)
     // })
     render(){
-        console.log(this.props);
       return (
 
         <div className="App">

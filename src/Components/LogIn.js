@@ -30,7 +30,6 @@ class LogIn extends React.Component {
      }
 
   render(){
-      console.log(this.props);
       const {user, errors} = this.state
 
     return(
@@ -47,11 +46,10 @@ class LogIn extends React.Component {
                 label="Your User Name" style={{ margin: 8 }} placeholder="User Name" halfWidth margin="normal"
                 InputLabelProps={{shrink: true,}}/>
                 <br/>
-                <TextField multiline={true} rows={2} rowsMax={4} onChange={this.handleChange} value={this.state.password}
-                name="password" id="standard-full-width" type="password" label="Your Password" style={{ margin: 8 }}
-                placeholder="Password" halfWidth margin="normal"
-                InputLabelProps={{shrink: true,}}
-                />
+                <TextField
+                onChange={this.handleChange} value={this.state.password} type="password" name="password" id="standard-full-width"
+                label="Password" style={{ margin: 8 }} placeholder="Password" halfWidth margin="normal"
+                InputLabelProps={{shrink: true,}}/>
               <br/>
               <Button onClick={this.handleSubmit}>Log In</Button>
             </form>
@@ -61,6 +59,10 @@ class LogIn extends React.Component {
     )
   }
 }
+// <TextField multiline={true} rows={2} rowsMax={4} onChange={this.handleChange} type="password" type="password" value={this.state.password} name="password" id="standard-full-width" label="Your Password" style={{ margin: 8 }}
+// placeholder="Password" halfWidth margin="normal"
+// InputLabelProps={{shrink: true,}}
+// />
 
 // <input onChange={this.handleChange} type="text" name="username" placeholder="username" value={this.state.username}/>
 // <br/>

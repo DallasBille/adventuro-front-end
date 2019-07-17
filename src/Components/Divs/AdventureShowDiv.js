@@ -8,7 +8,7 @@ const AdventureShowDiv = (props) => {
     }
     return(
         <div>
-            <h2 className='adventure-browse-div'>Browse Adventures, Fund Dreams, Donate to Charity</h2>
+            <h2 className='adventure-browse-div'>Browse Adventures. Fund Dreams. Donate to Charity.</h2>
             <button className='adventure-browse-button' onClick={createAdvRedirect}>Fund Your Own Adventure</button>
         </div>
     )
