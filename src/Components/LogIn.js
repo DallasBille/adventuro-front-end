@@ -20,7 +20,6 @@ class LogIn extends React.Component {
   handleSubmit = event => {
     event.preventDefault();
     this.props.setUserErrorsAction([]);
-    console.log("clicked", this.state);
     let userObj = this.state;
     this.props.logInUser(userObj);
   };
