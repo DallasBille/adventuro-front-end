@@ -6,13 +6,8 @@ import ProfileDonationsContainer from "../Containers/ProfileDonationsContainer";
 import UserInfo from "../Components/ProfileComponents/UserInfo";
 
 class ProfileContainer extends React.Component {
-  loadUserAdventures = () => {
-    const userAdventures = this.props.adventures.adventures.filter(
-      adventure => {
-        return adventure.user_id === this.props.user.id;
-      }
-    );
-    return userAdventures.map(adventure => {
+  userAdventures = () => {
+    return this.props.user.adventures.map(adventure => {
       return <UserAdventureList myAdventure={adventure} />;
     });
   };
@@ -22,10 +17,10 @@ class ProfileContainer extends React.Component {
     return (
       <div>
         <UserInfo />
-        <ProfileDonationsContainer donations={this.props.user.user_donations} />
-        {this.props.user.user_adventures.length !== 0 ||
-        this.props.user.user_donations.length !== 0 ? (
-          this.loadUserAdventures()
+        <ProfileDonationsContainer donations={this.props.user.donations} />
+        {this.props.user.adventures.length !== 0 ||
+        this.props.user.donations.length !== 0 ? (
+          this.userAdventures()
         ) : (
           <div className="profile-landing-div">
             <h4>Hey!</h4>

@@ -4,7 +4,6 @@ import { signUpNewUser } from "../Adapters/userAdapters";
 import { Redirect } from "react-router-dom";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
-import { setUserErrorsAction } from "../Redux/actions/userActions";
 
 class SignUp extends Component {
   state = {
@@ -63,7 +62,6 @@ class SignUp extends Component {
   };
 
   render() {
-    console.log(this);
     return (
       <>
         <section className="sign-up">
