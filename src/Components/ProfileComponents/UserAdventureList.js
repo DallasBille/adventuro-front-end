@@ -1,15 +1,11 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import PropTypes from "prop-types";
 import IconButton from "@material-ui/core/IconButton";
-import SvgIcon from "@material-ui/core/SvgIcon";
 import Collapse from "@material-ui/core/Collapse";
 import TextField from "@material-ui/core/TextField";
 import { connect } from "react-redux";
@@ -60,7 +56,7 @@ class UserAdventureList extends React.Component {
             <CardContent>
               <img
                 className="adventure-images"
-                src={`http://localhost:3000/${this.props.myAdventure.imageURL}`}
+                src={`http://localhost:3000/${this.props.myAdventure.image_url}`}
               />
               <Typography gutterBottom variant="h8" component="h3">
                 {this.props.myAdventure.title}
@@ -147,16 +143,6 @@ class UserAdventureList extends React.Component {
     );
   }
 }
-// <div className="user-adventure-list">
-// <h3>Current Adventure</h3>
-// <h3>{props.adventures.title}</h3>
-// <p>Cost: ${props.adventures.cost}</p>
-// <p>Mode: {props.adventures.mode}</p>
-// <p>Mission: {props.adventures.mission}</p>
-// <br/>
-// <button>Edit</button>
-// <button>Delete</button>
-// </div>
 
 const mapStateToProps = state => {
   return state;

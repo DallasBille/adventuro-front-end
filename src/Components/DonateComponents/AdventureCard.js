@@ -1,13 +1,10 @@
 import React from "react";
-import Paper from "@material-ui/core/Paper";
 import Card from "@material-ui/core/Card";
 import CardActionArea from "@material-ui/core/CardActionArea";
 import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
-import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
-import PropTypes from "prop-types";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import { showAdventure } from "../../Adapters/adventureAdapters";
 import { connect } from "react-redux";
@@ -27,7 +24,7 @@ const AdventureCard = props => {
     return short + "...";
   };
 
-  const setAdventureState = event => {
+  const setAdventureState = () => {
     props.showAdventure(props.adventure.id);
   };
 
@@ -39,7 +36,7 @@ const AdventureCard = props => {
             <CardContent>
               <img
                 className="adventure-images"
-                src={`http://localhost:3000/${props.adventure.imageURL}`}
+                src={`http://localhost:3000/${props.adventure.image_url}`}
               />
               <Typography gutterBottom variant="h8" component="h3">
                 {props.adventure.title}

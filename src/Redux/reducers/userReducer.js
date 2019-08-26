@@ -6,9 +6,9 @@ const initialState = {
   last_name: "",
   full_name: "",
   token: "",
-  user_adventures: [],
+  adventures: [],
   donation_adventures: [],
-  user_donations: []
+  donations: []
 };
 
 const userReducer = (state = initialState, action) => {
@@ -23,9 +23,9 @@ const userReducer = (state = initialState, action) => {
         first_name: userObj.first_name,
         last_name: userObj.last_name,
         full_name: userObj.full_name,
-        user_adventures: userObj.user_adventures,
+        adventures: userObj.adventures,
         donation_adventures: userObj.donation_adventures,
-        user_donations: userObj.user_donations
+        donations: userObj.donations
       };
 
     case "LOAD_USER":
@@ -39,9 +39,9 @@ const userReducer = (state = initialState, action) => {
         first_name: userObj.first_name,
         last_name: userObj.last_name,
         full_name: userObj.full_name,
-        user_adventures: userObj.user_adventures,
+        adventures: userObj.adventures,
         donation_adventures: userObj.donation_adventures,
-        user_donations: userObj.user_donations
+        donations: userObj.donations
       };
 
     case "LOGOUT_USER":
@@ -55,9 +55,9 @@ const userReducer = (state = initialState, action) => {
         last_name: "",
         full_name: "",
         token: "",
-        user_adventures: [],
+        adventures: [],
         donation_adventures: [],
-        user_donations: []
+        donations: []
       };
 
     case "LOGIN_USER":
@@ -69,19 +69,19 @@ const userReducer = (state = initialState, action) => {
         first_name: userObj.first_name,
         last_name: userObj.last_name,
         full_name: userObj.full_name,
-        user_adventures: userObj.user_adventures,
+        adventures: userObj.adventures,
         donation_adventures: userObj.donation_adventures,
-        user_donations: userObj.user_donations
+        donations: userObj.donations
       };
     case "NEW_ADVENTURE":
       let newAdventure = action.payload;
-      let addedAdv = [...state.user_adventures, newAdventure];
-      return { ...state, user_adventures: addedAdv };
+      let addedAdv = [...state.adventures, newAdventure];
+      return { ...state, adventures: addedAdv };
 
     case "NEW_DONATION":
       let newDonation = action.payload;
-      let addedDon = [newDonation, ...state.user_donations];
-      return { ...state, user_donations: addedDon };
+      let addedDon = [newDonation, ...state.donations];
+      return { ...state, donations: addedDon };
 
     case "SET_TOKEN":
       return {
