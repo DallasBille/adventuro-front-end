@@ -1,12 +1,10 @@
-import React from 'react'
-import {Link} from 'react-router-dom'
+import React from "react";
 const HomeDiv = () => {
+  return (
+    <div className="home-div">
+      <h2 className="home-div-header">About Adventuro</h2>
+    </div>
+  );
+};
 
-    return(
-        <div className="home-div">
-            <h2 className="home-div-header">About Adventuro</h2>
-        </div>
-    )
-}
-
-export default HomeDiv
+export default HomeDiv;

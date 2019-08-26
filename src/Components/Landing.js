@@ -1,20 +1,21 @@
-import React from 'react'
-import LogIn from './LogIn'
-import SignUp from './SignUp'
-import { connect } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import React from "react";
+import LogIn from "./LogIn";
+import SignUp from "./SignUp";
+import { connect } from "react-redux";
 
-const Landing = (props) => {
+const Landing = props => {
+  return (
+    <>
+      <LogIn />
+      <SignUp />
+    </>
+  );
+};
 
-    return(
-        <>
-            <LogIn/>
-            <SignUp/>
-        </>
-    )
-}
-
-const mapStateToProps = (state) => {
-    return state
-}
-export default connect(mapStateToProps, null)(Landing)
+const mapStateToProps = state => {
+  return state;
+};
+export default connect(
+  mapStateToProps,
+  null
+)(Landing);

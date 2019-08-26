@@ -1,20 +1,22 @@
-import React from 'react'
-import { connect } from "react-redux"
+import React from "react";
+import { connect } from "react-redux";
 
-const UserInfo = (props) => {
+const UserInfo = props => {
+  const upperCaseName = () => {
+    return props.first_name.charAt(0).toUpperCase() + props.first_name.slice(1);
+  };
 
-const upperCaseName = () => {
-    return props.first_name.charAt(0).toUpperCase() + props.first_name.slice(1)
-}
+  return (
+    <div className="user-info">
+      <h2 className="profile-header">Hey, {upperCaseName()}</h2>
+    </div>
+  );
+};
 
-    return(
-        <div className="user-info">
-            <h2 className='profile-header'>Hey, {upperCaseName()}</h2>
-        </div>
-    )
-}
-
-const mapStateToProps = ({user}) =>{
-    return user
-}
-export default connect(mapStateToProps, null)(UserInfo)
+const mapStateToProps = ({ user }) => {
+  return user;
+};
+export default connect(
+  mapStateToProps,
+  null
+)(UserInfo);
