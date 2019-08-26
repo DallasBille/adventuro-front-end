@@ -10,7 +10,7 @@
 }
 
 .App-header {
-  background-color: #F15156;
+  background-color: #f15156;
   min-height: 5vh;
   display: flex;
   flex-direction: column;
@@ -34,113 +34,114 @@
 }
 
 .adventure-card {
-    margin: 25px;
-    padding: inherit;
-    width: 250px;
-    height: 350px;
-    border: 1px solid #ccc;
+  margin: 25px;
+  padding: inherit;
+  width: 250px;
+  height: 350px;
+  border: 1px solid #ccc;
 }
 body {
-    font-family: 'Nanum Gothic', sans-serif;
+  font-family: "Nanum Gothic", sans-serif;
 }
-.donate-container a:link, .donate-container a:visited, .donate-container a:active {
-    margin: auto;
+.donate-container a:link,
+.donate-container a:visited,
+.donate-container a:active {
+  margin: auto;
   color: #000;
   text-decoration: none;
 }
 
 .home-image {
-    width: 100%;
+  width: 100%;
 }
 .home-div {
-    padding-top: 8px;
-    padding-bottom: 30px;
-    height: 40px;
-    background-color: #BF8B85;
+  padding-top: 8px;
+  padding-bottom: 30px;
+  height: 40px;
+  background-color: #bf8b85;
 }
 
 .home-div-header {
-    text-decoration: none;
-    color: #fff;
+  text-decoration: none;
+  color: #fff;
 }
 
 #nav-bar {
-    color: #fff;
-    background-color: #AD8A64;
+  color: #fff;
+  background-color: #ad8a64;
 }
 
 .nav-logo {
-    position: fixed;
-    left: 43%;
-    top: 2%;
-    width: fit-content;
-    font-size: 35px;
-    font-family:'Modak', cursive;
+  position: fixed;
+  left: 43%;
+  top: 2%;
+  width: fit-content;
+  font-size: 35px;
+  font-family: "Modak", cursive;
 }
 
 footer {
-
   border-top: 3px solid #ccc;
-  background-color: #5D5F71;
+  background-color: #5d5f71;
   color: #fff;
   height: 100px;
 }
 
 .link {
-    text-decoration: white;
-    color: white;
+  text-decoration: white;
+  color: white;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .logout {
-    position:fixed;
-    left: 35%;
-    top: 10%;
-    text-decoration: white;
-    color: white;
+  position: fixed;
+  left: 35%;
+  top: 10%;
+  text-decoration: white;
+  color: white;
 }
 
 .login {
-    position:fixed;
-    left: 40%;
-    padding-top: -10px;
-    text-decoration: white;
-    color: white;
+  position: fixed;
+  left: 40%;
+  padding-top: -10px;
+  text-decoration: white;
+  color: white;
 }
 
 #random {
-    width: 90vw;
+  width: 90vw;
 }
 /* =========adventure show */
 .adventure-show {
-    margin: 100px;
-    padding-right: -100px;
+  margin: 100px;
+  padding-right: -100px;
 }
 
 /* =============Progress Bar */
-.progress-bar{
-    display: inline-block;
-    position: relative;
-    height:20px;
-    width:350px;
-    border-radius: 50px;
-    border: 1px solid #333
+.progress-bar {
+  display: inline-block;
+  position: relative;
+  height: 20px;
+  width: 350px;
+  border-radius: 50px;
+  border: 1px solid #333;
 }
 
 .filler {
- background: #1DA598;
- height: 100%;
- border-radius: inherit;
- transition: width .2s ease-in;
+  background: #1da598;
+  height: 100%;
+  border-radius: inherit;
+  transition: width 0.2s ease-in;
 }
 /* ==========PROFILE */
 
 .profile-container {
-    margin: auto;
-    padding-top: 25px;
+  margin: auto;
+  padding-top: 25px;
 }
 /*  ========== DONATE CONTAINER*/
 .donate-container {
@@ -153,189 +154,186 @@ footer {
 }
 
 .adventure-browse-div {
-    text-align: left;
-    padding-left: 150px;
-    height: 80px;
-    width: 100vw;
+  text-align: left;
+  padding-left: 150px;
+  height: 80px;
+  width: 100vw;
 }
-.adventure-browse-button{
-    margin: -60px 800px 20px 0px;
-    cursor: pointer;
-    background-color: transparent;
-    border-radius: 6px;
-    border: 3px solid #BF8B85;
-    background: transparent;
-    color: black;
-    font-size: 30px;
+.adventure-browse-button {
+  margin: -60px 800px 20px 0px;
+  cursor: pointer;
+  background-color: transparent;
+  border-radius: 6px;
+  border: 3px solid #bf8b85;
+  background: transparent;
+  color: black;
+  font-size: 30px;
 }
-.adventure-browse-button:hover{
-    color: white;
-    border-radius: 6px;
-    background-color: #BF8B85;
-    font-size: 30px;
+.adventure-browse-button:hover {
+  color: white;
+  border-radius: 6px;
+  background-color: #bf8b85;
+  font-size: 30px;
 }
 
 .user-adventure-card {
-    margin: 20px;
-    float: left;
-    width: 50vw;
-    border: 1px solid #ccc;
+  margin: 20px;
+  float: left;
+  width: 50vw;
+  border: 1px solid #ccc;
 }
 
 .clear {
-    clear: both;
+  clear: both;
 }
 
-.user-donations{
-    float: right;
-    width: 35vw;
+.user-donations {
+  float: right;
+  width: 35vw;
 }
 .user-donation-list {
-    padding-top: 40px;
+  padding-top: 40px;
 }
-
 
 /*  =========== adventure css*/
 .adventure-images {
-    padding-top: -50px;
-    width: 220px;
-    height: 165px;
-    padding-right: 0px;
+  padding-top: -50px;
+  width: 220px;
+  height: 165px;
+  padding-right: 0px;
 }
 
 .adventure-show-divider {
-    margin-top: -50px;
-    width: 80vw;
-    height: 100px;
-    background-color: #5D5F71;
+  margin-top: -50px;
+  width: 80vw;
+  height: 100px;
+  background-color: #5d5f71;
 }
-.advenure-show-header{
-    position: absolute;
-    padding-left: 15px;
-    padding-top: 15px;
-    color: white;
-
+.advenure-show-header {
+  position: absolute;
+  padding-left: 15px;
+  padding-top: 15px;
+  color: white;
 }
 
-.charity-amount{
-    color: green;
-    font-weight: bold;
+.charity-amount {
+  color: green;
+  font-weight: bold;
 }
 
 .adventure-show-image {
-    padding-top: 20px;
-    width: 550px;
-    height: 413px;
+  padding-top: 20px;
+  width: 550px;
+  height: 413px;
 }
-.adventure-show-text{
-    display: inline-block;
-    width: 800px;
+.adventure-show-text {
+  display: inline-block;
+  width: 800px;
 }
 
 .create-container {
-    margin: auto;
-    width: 600px;
-    margin: 120px auto 120px;
+  margin: auto;
+  width: 600px;
+  margin: 120px auto 120px;
 }
 
 .adventure-select {
-    border: 1px solid #ccc;
-    width: 120px;
-    border-radius: 3px;
-    overflow: hidden;
-    position: relative;
+  border: 1px solid #ccc;
+  width: 120px;
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
 }
 
 .adventure-select select {
-    padding: 5px 8px;
-    width: 130%;
-    border: none;
-    box-shadow: none;
-    background: transparent;
-    background-image: none;
-    -webkit-appearance: none;
+  padding: 5px 8px;
+  width: 130%;
+  border: none;
+  box-shadow: none;
+  background: transparent;
+  background-image: none;
+  -webkit-appearance: none;
 }
 
 .height {
-    min-height: 90vh;
+  min-height: 90vh;
 }
 
 .user-info {
-    background-color: #BF8B85;
-    padding-bottom: 20px;
-    padding-top: 20px;
+  background-color: #bf8b85;
+  padding-bottom: 20px;
+  padding-top: 20px;
 }
 
 .profile-donations-container {
-    float: right;
-    border-style: solid;
-    height: 70vh;
-    width: 40vw;
-    margin-right: 15px;
-    overflow: auto;
+  float: right;
+  border-style: solid;
+  height: 70vh;
+  width: 40vw;
+  margin-right: 15px;
+  overflow: auto;
 }
 
 .my-donations {
-    color: white;
-    float: left;
-    background-color: #5D5F71;
-    position: relative;
-    width: 40vw;
+  color: white;
+  float: left;
+  background-color: #5d5f71;
+  position: relative;
+  width: 40vw;
 }
 .sign-up {
-    margin-top: 100px;
-    margin-bottom: 100px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 }
 
-.log-in{
-    margin-top: 100px;
+.log-in {
+  margin-top: 100px;
 }
 
 .about-text {
-    display: inline-block;
-    width: 60vw;
-    font-size: 24px;
+  display: inline-block;
+  width: 60vw;
+  font-size: 24px;
 }
 
 .user-donation-list {
-    border-bottom: 2px black;
-    background-color: #fff;
+  border-bottom: 2px black;
+  background-color: #fff;
 }
 .user-donation-list:hover {
-    background-color: #AD8A64;
-
+  background-color: #ad8a64;
 }
 
 .user-donation-link {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .filter {
-    width: 100vw;
-    height: 80px;
-    background-color: #AD8A64;
+  width: 100vw;
+  height: 80px;
+  background-color: #ad8a64;
 }
 
 .filter-label {
 }
 
-.profile-header{
-    color: white;
-    margin-right: 1000px;
-    padding-right: 200px;
+.profile-header {
+  color: white;
+  margin-right: 1000px;
+  padding-right: 200px;
 }
 .profile-info {
-    display: inline-block;
-    margin-left: 20px;
-    width: 500px;
+  display: inline-block;
+  margin-left: 20px;
+  width: 500px;
 }
-.profile-image{
-    display: inline-block;
-    width: 500px;
-    height: 375px;
+.profile-image {
+  display: inline-block;
+  width: 500px;
+  height: 375px;
 }
 
-.profile-landing-div{
-    align-items: center;
+.profile-landing-div {
+  align-items: center;
 }
