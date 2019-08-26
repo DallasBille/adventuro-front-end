@@ -63,7 +63,6 @@ class SignUp extends Component {
   };
 
   render() {
-    console.log(this);
     return (
       <>
         <section className="sign-up">

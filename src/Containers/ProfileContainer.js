@@ -17,6 +17,13 @@ class ProfileContainer extends React.Component {
     });
   };
 
+  userAdventures = () => {
+    return this.props.user.user_adventures.map(adventure => {
+      console.log(adventure);
+      return <UserAdventureList myAdventure={adventure} />;
+    });
+  };
+
   render() {
     return (
       <div>
@@ -24,7 +31,7 @@ class ProfileContainer extends React.Component {
         <ProfileDonationsContainer donations={this.props.user.user_donations} />
         {this.props.user.user_adventures.length !== 0 ||
         this.props.user.user_donations.length !== 0 ? (
-          this.loadUserAdventures()
+          this.userAdventures()
         ) : (
           <div className="profile-landing-div">
             <h4>Hey!</h4>
