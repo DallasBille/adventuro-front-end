@@ -1,33 +1,32 @@
-import React from 'react';
-import { createDonation } from '../../Adapters/donationAdapters'
-import Button from '@material-ui/core/Button';
-import TextField from '@material-ui/core/TextField';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogContentText from '@material-ui/core/DialogContentText';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import { connect } from 'react-redux'
-import {withRouter} from 'react-router'
-import { showAdventure } from '../../Adapters/adventureAdapters'
-import { addUserDonationAction } from '../../Redux//actions/userActions'
+import React from "react";
+import { createDonation } from "../../Adapters/donationAdapters";
+import Button from "@material-ui/core/Button";
+import TextField from "@material-ui/core/TextField";
+import Dialog from "@material-ui/core/Dialog";
+import DialogActions from "@material-ui/core/DialogActions";
+import DialogContent from "@material-ui/core/DialogContent";
+import DialogContentText from "@material-ui/core/DialogContentText";
+import DialogTitle from "@material-ui/core/DialogTitle";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { showAdventure } from "../../Adapters/adventureAdapters";
+import { addUserDonationAction } from "../../Redux//actions/userActions";
 
- class DonateDialog extends React.Component {
+class DonateDialog extends React.Component {
   state = {
     donation: {
-        user_id: null,
-        adventure_id: null,
-        amount: null
-
+      user_id: null,
+      adventure_id: null,
+      amount: null
     },
-    open: false,
+    open: false
   };
 
   handleClickOpen = () => {
-    if(!!this.props.token){
-        this.setState({ open: true });
+    if (!!this.props.token) {
+      this.setState({ open: true });
     } else {
-        alert("You Must Be Logged In to Donate")
+      alert("You Must Be Logged In to Donate");
     }
   };
 
@@ -35,30 +34,33 @@ import { addUserDonationAction } from '../../Redux//actions/userActions'
     this.setState({ open: false });
   };
 
-  handleChange = (event) => {
-      this.setState({
-          donation: {[event.target.name]: event.target.value,
-                    user_id: this.props.id,
-                    adventure_id: this.props.adventureId}
-      })
-  }
+  handleChange = event => {
+    this.setState({
+      donation: {
+        [event.target.name]: event.target.value,
+        user_id: this.props.id,
+        adventure_id: this.props.adventureId
+      }
+    });
+  };
 
   handleSubmit = () => {
-     let donation = this.state.donation
-     this.props.createDonation(donation)
-     .then(res => {
-         this.props.updateAdventureState(res)
-         this.props.addUserDonationAction(res.donation)
-     })
-     this.handleClose()
-  }
-
-
+    let donation = this.state.donation;
+    this.props.createDonation(donation).then(res => {
+      this.props.updateAdventureState(res);
+      this.props.addUserDonationAction(res.donation);
+    });
+    this.handleClose();
+  };
 
   render() {
     return (
       <div>
-        <Button variant="outlined" color="primary" onClick={this.handleClickOpen}>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={this.handleClickOpen}
+        >
           Donate to This Adventure!
         </Button>
         <Dialog
@@ -85,9 +87,9 @@ import { addUserDonationAction } from '../../Redux//actions/userActions'
           </DialogContent>
           <DialogActions>
             <Button onClick={this.handleClose} color="primary">
-            Cancel
+              Cancel
             </Button>
-            <Button  onClick={this.handleSubmit} color="primary">
+            <Button onClick={this.handleSubmit} color="primary">
               Donate
             </Button>
           </DialogActions>
@@ -97,7 +99,12 @@ import { addUserDonationAction } from '../../Redux//actions/userActions'
   }
 }
 
-const mapStateToProps = ({user}) => {
-    return user
-}
-export default withRouter(connect(mapStateToProps,{ createDonation, showAdventure, addUserDonationAction })(DonateDialog))
+const mapStateToProps = ({ user }) => {
+  return user;
+};
+export default withRouter(
+  connect(
+    mapStateToProps,
+    { createDonation, showAdventure, addUserDonationAction }
+  )(DonateDialog)
+);

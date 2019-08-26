@@ -1,17 +1,17 @@
-import React, {Component} from 'react'
+import React, { Component } from "react";
 
 export default class Footer extends Component {
-
-
-    render(){
-        return(
-            <div id="footer-id">
-            <footer>
-             <h1>Fuckin' Fooooter bro</h1>
-            </footer>
-            </div>
-        )
-    }
-
-
+  render() {
+    return (
+      <div id="footer-id">
+        <footer>
+          <h4>Adventuro</h4>
+          <p>
+            This app was produced by Five Amigos Development Consortium,
+            trademark LLC Worldwide International 365
+          </p>
+        </footer>
+      </div>
+    );
+  }
 }

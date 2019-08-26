@@ -3,7 +3,10 @@ import { loadAdventureAction } from "../Redux/actions/adventureActions";
 import { createAdventureAction } from "../Redux/actions/adventureActions";
 import { updateAdventureAction } from "../Redux/actions/adventureActions";
 import { addUserAdventureAction } from "../Redux/actions/userActions";
+<<<<<<< HEAD
 import { addUserDonationAction } from "../Redux/actions/userActions";
+=======
+>>>>>>> f6685a0156bfa9a97a0c77b0fa921684651fdf53
 import { setAdventureErrorsAction } from "../Redux/actions/adventureActions";
 
 export const fetchAdventures = () => {
