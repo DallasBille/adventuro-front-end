@@ -15,6 +15,8 @@ class SignUp extends Component {
     errors: []
   };
 
+  // this is a front end validation for our sign up form. If any of the fields
+  // incorrect, we load an error.
   validate = userObj => {
     const errors = [];
     if (userObj.first_name.length === 0) {

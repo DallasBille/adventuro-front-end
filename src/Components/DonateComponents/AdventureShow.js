@@ -46,7 +46,7 @@ class AdventureShow extends React.Component {
         <AdventureDivider user={this.state.adventure.user} />
         <img
           className="adventure-show-image"
-          src={`http://localhost:3000/${this.state.adventure.imageURL}`}
+          src={`http://localhost:3000/${this.state.adventure.image_url}`}
         />
         <h3>{this.state.adventure.title}</h3>
         <p className="adventure-show-text">{this.state.adventure.mission}</p>
