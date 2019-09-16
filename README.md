@@ -1,10 +1,16 @@
 ## About the Project
 
-Adventuro is a passion project where a user can donate money to adventures they find interesting. A user can also create their own adventure to be funded. Any extra money donated is given to a charity of the adventures choice.
+Adventuro is a project where a user can donate money to adventures they find interesting, a user can also create their own adventure to be funded. Any extra money donated is given to a charity of the adventurers choice.
 
-### What it uses
+<!-- [![Adeventuro]()](https://www.youtube.com/watch?v=wo0yppQpd0A&t=17s "Adventuro") -->
 
-It is built with React, Redux, withRouter, Bcrypt with localStorage, was using AWS but now uses local server storage, and Material UI. It connects with a Rails back end, and consumes the JSON API's.
+## Motivation:
+
+I began this project because I have spent the past 6 years working, travelling, and adventuring. I believe everybody should have the opportunity to go on a crazy adventure in their lifetime. Adventuring is an opportunity to cultivate wild stories and experiences that you will remember forever, and I don't think enough young people do it.
+
+### Technologies:
+
+Adventuro uses React, Redux with Thunk, React Active Storage Provider, Material-UI, Bcrypt with localStorage, and React Router. It was using AWS as to store photo's, however it currently uses local storage.
 
 ### Back End
 
@@ -12,11 +18,9 @@ https://github.com/DallasBille/adventuro-back-end
 
 ## Set Up
 
-### Clone the repo
-
-### npm install
-
-### `npm start`
+1. Clone the repo
+2. npm install
+3. npm start
 
 This will spin up the site, but make sure you have cloned and set up the back end so you can created your own user, adventure, and donate!
 
