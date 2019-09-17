@@ -1,16 +1,16 @@
 ## About the Project
 
-Adventuro is a project where a user can donate money to adventures they find interesting, a user can also create their own adventure to be funded. Any extra money donated is given to a charity of the adventurers choice.
+Adventuro is a crowdfunding project where a user can donate money to adventures they find interesting, a user can also create their own adventure to be funded. Any extra money donated is given to a charity of the adventurers choice.
 
 ![Imgur](https://i.imgur.com/1IuaWEo.png)
 
 ## Motivation:
 
-I began this project because I have spent the past 6 years working, travelling, and adventuring. I believe everybody should have the opportunity to go on a crazy adventure in their lifetime. Adventuring is an opportunity to cultivate wild stories and experiences that you will remember forever, and I don't think enough young people do it.
+The reason I created Adventuro is because the past 6 years worked, travelled, and adventured doing everything from riding a  49cc moped from Alaska to NYC, to riding a bicycle the length of New Zealand. I believe everybody should have the opportunity to go on a crazy adventure in their lifetime. Adventuring is an opportunity to cultivate wild stories and experiences that you will remember forever, and I don't think enough young people do it.
 
 ### Technologies:
 
-Adventuro uses React, Redux with Thunk, React Active Storage Provider, Material-UI, Bcrypt with localStorage, and React Router. It was using AWS as to store photo's, however it currently uses local storage.
+Adventuro uses React, Redux with Thunk, React Active Storage Provider, Material-UI, Bcrypt with localStorage, and React Router. It was using AWS to store photo's, but currently uses local storage.
 
 ### Back End
 
