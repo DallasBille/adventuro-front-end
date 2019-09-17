@@ -6,7 +6,7 @@ Adventuro is a crowdfunding project where a user can donate money to adventures 
 
 ## Motivation:
 
-The reason I created Adventuro is because the past 6 years worked, travelled, and adventured doing everything from riding a  49cc moped from Alaska to NYC, to riding a bicycle the length of New Zealand. I believe everybody should have the opportunity to go on a crazy adventure in their lifetime. Adventuring is an opportunity to cultivate wild stories and experiences that you will remember forever, and I don't think enough young people do it.
+I created Adventuro after spending the past 6 years working, travelling, and adventuring. Doing everything from riding a  49cc moped from Alaska to NYC, to riding a bicycle the length of New Zealand. I believe everybody should have the opportunity to go on a crazy adventure in their lifetime. Adventuring is an opportunity to cultivate wild stories and experiences that you will remember forever, and I don't think enough young people do it.
 
 ### Technologies:
 
