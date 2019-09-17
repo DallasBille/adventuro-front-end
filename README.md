@@ -2,7 +2,7 @@
 
 Adventuro is a project where a user can donate money to adventures they find interesting, a user can also create their own adventure to be funded. Any extra money donated is given to a charity of the adventurers choice.
 
-[Imgur](https://i.imgur.com/1IuaWEo.png)
+![Imgur](https://i.imgur.com/1IuaWEo.png)
 
 ## Motivation:
 
